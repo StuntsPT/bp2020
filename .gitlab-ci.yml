@@ -1,0 +1,16 @@
+image: 
+  name: gitlab/gitlab-runner:alpine
+  entrypoint: ["/bin/sh", "-c"]
+
+pages:
+  stage: deploy
+  before_script:
+  - git submodule sync --recursive
+  - git submodule update --init --recursive
+  script:
+  - echo 'Nothing to do...'
+  artifacts:
+    paths:
+    - public
+  only:
+  - master
