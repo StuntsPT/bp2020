@@ -8,5 +8,5 @@ gem "jekyll", "3.7.4"
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # This will get the "hacker" theme from github-pages
-gem "github-pages", 192, group: :jekyll_plugins
+#gem "github-pages", 192, group: :jekyll_plugins
 

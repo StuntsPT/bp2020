@@ -1,7 +1,7 @@
 title: [Bioinformática Prática]
 
-theme: jekyll-theme-hacker
+# theme: jekyll-theme-hacker
 
-repository: StuntsPT/bp2018.github.io
+# repository: StuntsPT/bp2018.github.io
 
 markdown: kramdown
