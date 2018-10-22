@@ -16,6 +16,6 @@ pages:
     - git submodule update --init --recursive
   artifacts:
     paths:
-    - public/classes/exercices
+    - public
   only:
   - master
