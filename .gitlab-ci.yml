@@ -5,12 +5,12 @@ pages:
   before_script:
     - git submodule sync --recursive
     - git submodule update --init --recursive
-  script:
     - bundle install
+  script:
     - bundle exec jekyll build -d public/classes/exercices
   artifacts:
     paths:
     - public
-    - public/classes/exercices
+      # - public/classes/exercices
   only:
   - master
