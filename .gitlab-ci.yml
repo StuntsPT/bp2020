@@ -1,8 +1,9 @@
-image: 
-  name: gitlab/gitlab-runner:alpine
-  entrypoint: ["/bin/sh", "-c"]
+image: ruby:2.3 
 
 pages:
+  script:
+    - bundle install
+    - bundle exec jekyll build -d public/classes/exercices
   stage: deploy
   before_script:
   - git submodule sync --recursive
@@ -12,5 +13,6 @@ pages:
   artifacts:
     paths:
     - public
+    - public/classes/exercices
   only:
   - master
