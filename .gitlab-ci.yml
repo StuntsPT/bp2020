@@ -11,6 +11,7 @@ pages:
     - bundle install
     - mkdir public/test
     - bundle exec jekyll new public/test
+    - mkdir public/test/_includes
     - cp public/classes/exercices/*.md public/test/_includes
     - bundle exec jekyll build -d public/test_deploy -s public/test
   stage: deploy
