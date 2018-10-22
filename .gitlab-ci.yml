@@ -10,6 +10,9 @@ pages:
   script:
     - bundle install
     - mkdir public/test
+      # Criar novo e fazer overwrite ao que for preciso, tentar antes assim (pode-se fz delete ao index e tudo)
+    - bundle exec jekyll new public/test
+    - rm public/test/*.md
     - cp public/classes/exercices/*.md public/test/
     - bundle exec jekyll build -d public/test_deploy -s public/test --config public/classes/exercices/_config.yml
   stage: deploy
