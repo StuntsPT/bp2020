@@ -1,15 +1,13 @@
 image: ruby:2.3 
 
 pages:
+  stage: deploy
+  before_script:
+    - git submodule sync --recursive
+    - git submodule update --init --recursive
   script:
     - bundle install
     - bundle exec jekyll build -d public/classes/exercices
-  stage: deploy
-  before_script:
-  - git submodule sync --recursive
-  - git submodule update --init --recursive
-  script:
-  - echo 'Nothing to do...'
   artifacts:
     paths:
     - public
