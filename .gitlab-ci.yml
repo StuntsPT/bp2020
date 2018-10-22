@@ -16,6 +16,6 @@ pages:
   artifacts:
     paths:
     - public
-      # - public/classes/exercices
+    - public/classes/exercices
   only:
   - master
