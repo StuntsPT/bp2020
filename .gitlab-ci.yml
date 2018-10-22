@@ -1,13 +1,13 @@
 image: ruby:2.3 
 
 pages:
+  script:
+    - bundle install
+    - bundle exec jekyll build -d public/classes/exercices
   stage: deploy
   before_script:
     - git submodule sync --recursive
     - git submodule update --init --recursive
-    - bundle install
-  script:
-    - bundle exec jekyll build -d public/classes/exercices
   artifacts:
     paths:
     - public
