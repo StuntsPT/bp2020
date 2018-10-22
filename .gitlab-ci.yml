@@ -9,7 +9,7 @@ variables:
 pages:
   script:
     - bundle install
-    - bundle exec jekyll build -d public/classes/exercices
+    - cd public/classes/exercises && bundle exec jekyll build -d public/classes/exercices
   stage: deploy
   before_script:
     - git submodule sync --recursive
