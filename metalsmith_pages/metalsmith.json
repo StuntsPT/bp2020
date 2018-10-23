@@ -1,5 +1,5 @@
 {
-  "destination": "../public",
+  "destination": "../metalsite",
   "metadata": {
     "title": "Bioinformática Prática",
     "description": "Built with Metalsmith, hosted by GitLab Pages."
