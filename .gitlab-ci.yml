@@ -9,7 +9,7 @@ pages:
     - mkdir public
     - cp -r docs/* public
     - npm install metalsmith
-    - cp -r docs/classes/exercices/*.md metalsmith_pages/src/
+    - cp -r docs/classes/exercises/*.md metalsmith_pages/src/
     - cd metalsmith_pages && make build
   before_script:
     - git submodule sync --recursive
