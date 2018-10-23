@@ -6,9 +6,11 @@ pages:
     - node_modules/
 
   script:
-    - npm install metalsmith
-    - cd docs/classes/exercices && make build
+    - mkdir public
     - cp -r docs/* public
+    - npm install metalsmith
+    - cp -r docs/classes/exercices/*.md metalsmith_pages/src/
+    - cd metalsmith_pages && make build
   before_script:
     - git submodule sync --recursive
     - git submodule update --init --recursive

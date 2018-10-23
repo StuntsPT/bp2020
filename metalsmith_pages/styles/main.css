@@ -1,0 +1,13 @@
+body {
+    background: #ededed;
+}
+
+h1 {
+    text-align: center;
+}
+
+.logo {
+    width: 300px;
+    display: block;
+    margin: 50px auto;
+}

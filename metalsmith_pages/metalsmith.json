@@ -1,0 +1,16 @@
+{
+  "destination": "../public",
+  "metadata": {
+    "title": "Bioinformática Prática",
+    "description": "Built with Metalsmith, hosted by GitLab Pages."
+  },
+  "plugins": {
+    "metalsmith-markdown": {},
+    "metalsmith-permalinks": {
+      "pattern": ":title"
+    },
+    "metalsmith-layouts": {
+      "engine": "handlebars"
+    }
+  }
+}
