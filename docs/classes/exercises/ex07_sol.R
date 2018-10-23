@@ -1,6 +1,6 @@
 # Exercises 2 possible solutions
 
-magic_beans = read.csv(url("https://raw.githubusercontent.com/StuntsPT/BP2017/master/classes/exercices/Magic_beans_lower.csv"), header=TRUE, row.names=1)
+magic_beans = read.csv(url("https://raw.githubusercontent.com/StuntsPT/BP2017/master/classes/exercises/Magic_beans_lower.csv"), header=TRUE, row.names=1)
 
 # Size category
 size_category_counts = data.frame(table(magic_beans$size.category))
