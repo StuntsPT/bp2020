@@ -54,20 +54,24 @@
 
 |||
 
-## Exame TP
-
-* Baseado nos exercícios feitos ao longo da disciplina <!-- .element: class="fragment" data-fragment-index="1" -->
-* Com consulta <!-- .element: class="fragment" data-fragment-index="2" -->
-* Todo feito no PC <!-- .element: class="fragment" data-fragment-index="3" -->
-
-|||
-
 ## Seminários
 
 * Apresentação individual de 15 minutos <!-- .element: class="fragment" data-fragment-index="1" -->
   * Discussão de 5 minutos <!-- .element: class="fragment" data-fragment-index="1" -->
 * Enviem um artigo científico à vossa escolha por email <!-- .element: class="fragment" data-fragment-index="2" -->
   * Focar a apresentação nos conteúdos relacionados com o programa da disciplina <!-- .element: class="fragment" data-fragment-index="2" -->
+* **Usem software de gestão de referências bibliográficas** <!-- .element: class="fragment" data-fragment-index="3" -->
+  * Endnote <!-- .element: class="fragment" data-fragment-index="3" -->
+  * Zotero <!-- .element: class="fragment" data-fragment-index="3" -->
+  * Mendeley <!-- .element: class="fragment" data-fragment-index="3" -->
+
+---
+
+## Ordem das apresentações
+
+* Ficheiro com os nomes dos alunos <!-- .element: class="fragment" data-fragment-index="1" -->
+* "Random seed" <!-- .element: class="fragment" data-fragment-index="2" -->
+* Script <!-- .element: class="fragment" data-fragment-index="3" -->
 
 |||
 
@@ -83,14 +87,6 @@
 * Perguntas durante os seminários <!-- .element: class="fragment" data-fragment-index="2" -->
 
 ---
-
-## Ordem das apresentações
-
-* Ficheiro com os nomes dos alunos <!-- .element: class="fragment" data-fragment-index="1" -->
-* "Random seed" <!-- .element: class="fragment" data-fragment-index="2" -->
-* Script <!-- .element: class="fragment" data-fragment-index="3" -->
-
-|||
 
 ## Ordem das apresentações
 
