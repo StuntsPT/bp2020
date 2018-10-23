@@ -19,7 +19,7 @@ pages:
     - sed -i "s/page.html/ page.html/" public/classes/exercises/*.md
     - for i in $(ls metalsite |grep "ex"); do mv metalsite/${i}/index.html public/classes/exercises/${i}.html; done
     - mv metalsite/styles public/classes/exercises/styles
-    - mv metalsite/src/images public/classes/exercises/images
+    - mv metalsmith_pages/src/images public/classes/exercises/images
   artifacts:
     paths:
     - public
