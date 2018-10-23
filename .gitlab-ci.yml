@@ -15,7 +15,8 @@ pages:
     - git submodule sync --recursive
     - git submodule update --init --recursive
   after_script:
-    - sed -i '1 i/---\n\nlayout: page.html\n\n---\n\n' public/classes/exercises/*.md
+    - sed -i "1 i/---\n\nlayout:page.html\n\n---\n\n" public/classes/exercises/*.md
+    - sed -i "s/page.html/ page.html/" public/classes/exercises/*.md
     - for i in $(ls metalsite |grep "ex"); do mv metalsite/${i}/index.html public/classes/exercises/${i}.html; done
     - mv metalsite/styles public/classes/exercises/styles
   artifacts:
