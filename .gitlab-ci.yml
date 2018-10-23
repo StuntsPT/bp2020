@@ -1,21 +1,13 @@
-image: ruby:2.3 
-
-variables:
-  LC_ALL: "C.UTF-8"
-  LANG: "en_US.UTF-8"
-  LANGUAGE: "en_US.UTF-8"
-  JEKYLL_ENV: production
+image: node:4.2.2 
 
 pages:
+  cache:
+    paths:
+    - node_modules/
+
   script:
-    - bundle install
-    - mkdir public/test
-      # Criar novo e fazer overwrite ao que for preciso, tentar antes assim (pode-se fz delete ao index e tudo)
-    - bundle exec jekyll new public/test
-    - rm public/test/*.md
-    - cp public/classes/exercices/*.md public/test/
-    - bundle exec jekyll build -d public/test_deploy -s public/test --config public/classes/exercices/_config.yml
-  stage: deploy
+    - npm install metalsmith
+    - cd public/classes/exercices && make build
   before_script:
     - git submodule sync --recursive
     - git submodule update --init --recursive
