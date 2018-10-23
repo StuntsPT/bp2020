@@ -15,7 +15,7 @@ pages:
     - git submodule sync --recursive
     - git submodule update --init --recursive
   after_script:
-    - for i in $(ls metalsite |grep "ex");do; mv metalsite/${i}/index.html public/classes/exercises/${i}.html;done
+    - for i in $(ls metalsite |grep "ex"); do mv metalsite/${i}/index.html public/classes/exercises/${i}.html; done
     - mv metalsite/styles public/classes/exercises/styles
   artifacts:
     paths:
