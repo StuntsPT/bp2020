@@ -17,6 +17,8 @@ pages:
   after_script:
     - for i in $(ls metalsite |grep "ex"); do mv metalsite/${i}/index.html public/classes/exercises/${i}.html; echo "</html>" >> public/classes/exercises/${i}.html; done
     - sed -i '1 i<html>\n<head>\n<link rel="stylesheet" type="text/css" href="styles/main.css">\n</head>' public/classes/exercises/*.html
+    - sed -i 's/<body>/<body>\n<div class="container">\n<section id="main_content">/' public/classes/exercises/*.html
+    - sed -i 's/</body>/</section>\n</div>\n</body>/' public/classes/exercises/*.html
     - mv metalsite/styles public/classes/exercises/styles
     - mv metalsmith_pages/src/images public/classes/exercises/images
   artifacts:
