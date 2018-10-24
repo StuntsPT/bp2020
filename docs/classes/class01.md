@@ -1,4 +1,4 @@
-### Class #2
+### Class #1
 
 #### Bioinformática Prática 2018
 
@@ -68,6 +68,7 @@
   * Discussão de 5 minutos <!-- .element: class="fragment" data-fragment-index="1" -->
 * Enviem um artigo científico à vossa escolha por email <!-- .element: class="fragment" data-fragment-index="2" -->
   * Focar a apresentação nos conteúdos relacionados com o programa da disciplina <!-- .element: class="fragment" data-fragment-index="2" -->
+* Referências no final <!-- .element: class="fragment" data-fragment-index="3" -->
 
 |||
 
