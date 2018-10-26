@@ -15,9 +15,9 @@
 1ª semana
 
 * 29-10-2018 – Introdução à cadeira; organização e tratamento de dados
-* 30-10-2018 – Revisão de conceitos; introdução ao R
-* 31-10-2018 – Visualização de dados; gráficos em R
-* 02-11-2018 – Planeamento experimental
+* 30-10-2018 – Introdução ao R
+* 31-10-2018 – Revisão de conceitos (14-16h) - Seminário
+* 02-11-2018 – Gráficos em R; erro; p-values
 
 |||
 
@@ -27,8 +27,8 @@
 
 * 05-11-2018 – Testes de hipóteses
 * 06-11-2018 – Testes de hipóteses II
-* 07-11-2018 – **Journal Club** (14h-16h)
-* 09-11-2018 – Análise de SNPs
+* 07-11-2018 – **Journal Club**; desenho experimental
+* 09-11-2018 – Análise exploratória
 * 10-11-2018 – Automatização e reprodutibilidade
 
 |||
@@ -37,7 +37,7 @@
 
 3ª semana
 
-* 12-11-2018 – Dados de Sequências
+* 12-11-2018 – Revisões (14h-16h) - Seminário
 * 13-11-2018 – **Apresentações**
 * 14-11-2018 – **Apresentações**
 * 15-11-2018 – Exercícios
