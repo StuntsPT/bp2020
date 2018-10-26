@@ -10,17 +10,7 @@
 
 ---
 
-## Getting started
-
-* Data handling
-* Text files
-* Simple formatting
-
----
-
-## R
-
-![Imagem do R](link_to_R_image.png)
+<img src="C02_assets/R_logo.png" style="background:none; border:none; box-shadow:none;">
 
 [GNU R](https://www.r-project.org/)
 
@@ -28,46 +18,64 @@
 
 ## Meet R
 
-![R console](link_to_R_console.png)
+<img src="C02_assets/R-console.gif" style="background:none; border:none; box-shadow:none;">
 
 ---
 
 ## RStudio - an R IDE
 
-![RStudio_image](link_to_rstudio.png)
+![RStudio_image](C02_assets/rstudio.png)
 
-* Text editor <!-- .element: class="fragment" data-fragment-index="1" -->
-* Console <!-- .element: class="fragment" data-fragment-index="2" -->
-* Workspace objects <!-- .element: class="fragment" data-fragment-index="3" -->
-* Multi-purpose <!-- .element: class="fragment" data-fragment-index="4" -->
+* Text editor (Top left) <!-- .element: class="fragment" data-fragment-index="1" -->
+* Console (Bottom left) <!-- .element: class="fragment" data-fragment-index="2" -->
+* Workspace objects (Top right) <!-- .element: class="fragment" data-fragment-index="3" -->
+* Multi-purpose (Bottom right) <!-- .element: class="fragment" data-fragment-index="4" -->
 
 ---
 
 ## How do I use this thing?
 
-* Calculator
+Calculator
 
-```R
-4+4
+<pre class="fragment"><code>4 + 4
 [1] 8
 
-(2 + 5)*6/(6-2)
+(2 + 5) * 6 / (6 - 2)
 [1] 10.5
-```
+</code></pre>
 
 |||
 
 
 ## How do I use this thing?
 
-* Text processor
+Text processor
+
+<pre class="fragment"><code>print("Good Morning World!")
+[1] "Good Morning World!"
+</code></pre>
+
+<img class="fragment" src="C02_assets/BS_good_morning.gif" style="background:none; border:none; box-shadow:none;">
+
+|||
+
+## How do I use this thing?
 
 ```R
-print("Good Morning World!")
-[1] "Good Morning World!"
-```
+2 < 3  # Logical operators
 
-![Bart Simpson](Link to bart simpson.png)
+2 > 3
+
+2 <= 3
+
+2 >= 3
+
+2 == 2
+
+2 == 2 | 2 >= 3  # OR
+
+2 == 2 & 2 < 3  # AND
+```
 
 ---
 
@@ -77,7 +85,7 @@ print("Good Morning World!")
 
 ```R
 txt = "Good Morning World!"
-
+txt <- "Good Morning World!"  # Old syntax
 print(txt)
 ```
 
@@ -133,6 +141,20 @@ d = c(1, 2)
 a + d  # Recycling rule!
 a[2]  # Indexing
 ```
+
+---
+
+## Advanced variable types
+
+### Factor
+
+Factors are used for storing **categorical variables**.
+
+<img src="C02_assets/pokeball.png" style="background:none; border:none; box-shadow:none;">
+
+<pre class="fragment"><code>captured_pokemon = c("normal", "normal", "electric", "fire", "fire", "fire", "water", "grass")
+captured_pokemon_types = factor(captured_pokemon)
+</pre></code>
 
 ---
 
@@ -210,4 +232,84 @@ mtcars$am == 0  # Logical indexing!!!111!!one
 
 ## Functions
 
+R functions are invoked by its **name**, then followed by the parenthesis, and zero or more arguments.
+
+```R
+c(1, 2, 3)
+
+sum(1, 2)
+
+head(mtcars)
+
+seq(10, 30)
+```
+
+* We can also define our own functions. More on that later. <!-- .element: class="fragment" data-fragment-index="1" -->
+
+---
+
+## Getting help
+
+"When in doubt, ask."
+You can ask R for help with the command `?function`. Or if you need help on a **topic** rather than a function, use the `??` notation ("fuzzy search").
+
+```R
+?head
+
+??multivariate
+```
+
+---
+
+## Installing external packages
+
+<ul>
+<li class="fragment">
+One of R's greatest strengths is how many 3rd party packages are developed for it
+</li>
+<li class="fragment">
+Installing these external packages is as easy as typing `install.packages(pkg_name)`
+</li>
+<li class="fragment">
+We then have to load the packages we need in order to use them
+</li>
+</ul>
+<pre class="fragment">
+<code>install.packages("ape")
+
+library("ape")
+</code></pre>
+
+---
+
+## Missing data
+
+Missing data is coded in R as `NA`, which stands for "**N**ot **A**vailable"
+
+```R
+v = c(1, 2, NA, 4)
+is.na(v)
+
+mean(v)
+
+mean(v, na.rm=TRUE)
+```
+
+---
+
+## Loading data from external sources
+
+You don't have to type data into R manually. You can load data directly from files. You can use `read.csv()` or `read.table()`.
+
+```R
+data = read.csv("/path/to/file.csv")
+
+data = read.table("/path/to/file.txt", header=FALSE, sep="\t")
+
+data = read.table("https://some.site.with.data.com/datafile.txt", header=TRUE, sep=";", dec=",")
+```
+
+---
+
+# Break time!
 
