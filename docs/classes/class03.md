@@ -139,3 +139,35 @@ ID several concepts
 
 * q-Quantiles -  values that partition a finite set of values into *q* subsets of (nearly) equal sizes
 * Quartile - A type of quantile. Divides the data in 4 equal parts. (Q2 is the median)
+* Percentiles - Values that divide the sample into 100 equal parts
+
+---
+
+## Skewness & Kurtosis
+
+![Skweness & Curtosis image](link)
+
+---
+
+## Distribution examples
+
+* Normal
+* Exponential
+* Poisson
+* Lognormal
+* Beta
+* Gamma
+* "Paranormal distribution - disguised as a pumpkin
+
+---
+
+## Data transformations
+
+* Logaritmic
+* Square root
+* Exponetial
+* Arcsen
+
+---
+
+## That's it for today!
