@@ -57,12 +57,85 @@
 
 ![ac & pre pic](link)
 
+* Systematic error
+* Random error
+
 ---
 
 ## Populations & Samples
 
 ID several concepts
-
+* Population
+* Sample
+* Parameter
+* Sample size
+* Sampling
 
 ---
 
+## Descriptive statistics
+
+* Central tendency
+* Dispersal
+
+---
+
+## Central tendency
+
+* Mean - Average of all values
+  * Arithmetic
+  * Geometric
+  * Harmonic
+  * Weighted or unweighted
+* Median - Central occurrence
+* Mode - Most frequent occurrence
+
+|||
+
+## Central tendency
+
+![different_distributions](link)
+
+---
+
+## Dispersal
+
+* Range - Diff. between Max. and Min.
+* Variance - [Expectation of the squared deviation of a random variable from its mean](https://www.mathsisfun.com/data/standard-deviation-formulas.html)
+* Standard deviation - [Square root of variance](https://www.mathsisfun.com/data/standard-deviation-formulas.html)
+* Coefficient of variation - Ratio of Std. Dev. to the mean
+* Standard error - Std. Dev. of the sampling distribution
+* Confidence interval
+
+|||
+
+## Dispersal
+
+![std. dev. image](link)
+
+
+|||
+
+## Dispersal
+
+![Conf interval image](link)
+
+---
+
+## Reporting descriptive statistics
+
+* Use a central tendency measurement coupled with a dispersal measurement
+  * Mean + Std. Dev.
+  * Median + range
+* Obtain precision estimates using SE or confidence interval
+* Always remember:
+  * Which measurements you have used
+  * Present the value of "N"
+  * Indicate the units!!!!111!one!
+
+---
+
+## Other descriptors
+
+* q-Quantiles -  values that partition a finite set of values into *q* subsets of (nearly) equal sizes
+* Quartile - A type of quantile. Divides the data in 4 equal parts. (Q2 is the median)
