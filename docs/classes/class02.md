@@ -202,7 +202,7 @@ A **data frame** is used for storing data tables. It is a set of vectors of equa
 n = c(2, 3, 5) 
 s = c("aa", "bb", "cc") 
 b = c(TRUE, FALSE, TRUE) 
-df = data.frame(n, s, b)  # df is a data frame 
+dframe = data.frame(n, s, b)  # dframe is a data frame 
 ```
 
 |||
@@ -261,6 +261,24 @@ max()
 min()
 summary()
 table()
+
+```
+
+---
+
+## Variable coercion
+
+* There are functions than can be used to transform variables:
+
+```R
+
+as.data.frame(MATRIX)
+
+as.numeric(INTEGER)
+
+as.character(NUMERIC)
+
+# Many more!
 
 ```
 
