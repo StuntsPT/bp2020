@@ -227,7 +227,7 @@ mtcars[1,]  # Get row 1
 
 mtcars$am == 0  # Logical indexing!!!111!!one
 
-mtcars[mtcars["cyl" == 6],]  # Can you guess what this does?
+mtcars[mtcars$cyl == 6,]  # Can you guess what this does?
 ```
 
 ---
