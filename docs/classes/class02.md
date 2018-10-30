@@ -248,6 +248,22 @@ seq(10, 30)
 
 * We can also define our own functions. More on that later. <!-- .element: class="fragment" data-fragment-index="1" -->
 
+|||
+
+## Functions
+
+```R
+# See also
+
+mean()
+sd()
+max()
+min()
+summary()
+table()
+
+```
+
 ---
 
 ## Getting help
@@ -277,9 +293,9 @@ We then have to load the packages we need in order to use them
 </li>
 </ul>
 <pre class="fragment">
-<code>install.packages("ape")
+<code>install.packages("psych")
 
-library("ape")
+library("psych")
 </code></pre>
 
 ---
