@@ -85,42 +85,42 @@
 
 ---
 
-## Populations & Samples
+## Pops & Samples
 
 * Population
-  * All possible observations
 
-![Todas os pokemons](link)
+![DBZ_all](C03_assets/DBZ.jpg) <!-- .element: class="fragment" data-fragment-index="1" -->
 
-|||
-
-## Populations & Samples
-
-* Sample
-  * Set of observations
-
-[Alguns pokemons](link)
+* All possible observations <!-- .element: class="fragment" data-fragment-index="2" -->
 
 |||
 
-## Populations & Samples
+## Pops & Samples
+
+* Sample (set of observations)
+
+![DBZ_all](C03_assets/DBZ_sample.jpg) <!-- .element: class="fragment" data-fragment-index="1" -->
+
+* Sampling method  <!-- .element: class="fragment" data-fragment-index="2" -->
+* Sample size "N" <!-- .element: class="fragment" data-fragment-index="3" -->
+
+|||
+
+## Pops & Samples
 
 * Parameter
 
+![DBZ_hair](C03_assets/DBZ_hair.png) <!-- .element: class="fragment" data-fragment-index="1" -->
+
+* Hair colour <!-- .element: class="fragment" data-fragment-index="2" -->
 
 |||
 
+## Pops & Samples
 
-## Populations & Samples
+* Missing data
 
-* Sample size
-
-
-|||
-
-
-
-* Sampling
+![krillin_missing_data](C03_assets/Missing_data.png) <!-- .element: class="fragment" data-fragment-index="1" -->
 
 ---
 
