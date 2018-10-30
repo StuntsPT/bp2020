@@ -16,36 +16,58 @@
 
 ## Variables
 
-* Continuous
+* Continuous <!-- .element: class="fragment" data-fragment-index="1" -->
+  * Can assume an infinite number of values (eg. length) <!-- .element: class="fragment" data-fragment-index="2" -->
 
-![Cont variable image](link)
+![Cont variable](C03_assets/normal-distribution.png) <!-- .element: class="fragment" data-fragment-index="2" -->
 
 ---
 
 ## Variables
 
-* Discreet
+* Discrete <!-- .element: class="fragment" data-fragment-index="1" -->
+ * Can assume a finite number of values (eg. number of beans) <!-- .element: class="fragment" data-fragment-index="2" -->
 
-![Disc variable image](link)
+![Disc variable](C03_assets/discrete.gif) <!-- .element: class="fragment" data-fragment-index="2" -->
 
-|||
+---
 
-## Discreet variables
+## Measurement types
 
-* Nominal
-    * A
-* Ordinal (ranked)
-    * A
-* Circular
-    * A
-* Ratios
-    * A
+* Nominal (categorical)<!-- .element: class="fragment" data-fragment-index="1" -->
+    * Discrete, unordered categories (eg. names)<!-- .element: class="fragment" data-fragment-index="1" -->
+* Ordinal (ranked) <!-- .element: class="fragment" data-fragment-index="2" -->
+    * Discrete, ordered categories, of unknown exact values (eg. cancer stages)<!-- .element: class="fragment" data-fragment-index="2" -->
+* Circular <!-- .element: class="fragment" data-fragment-index="3" -->
+    * The lowest and highest value are next to each other (eg. days of the year) <!-- .element: class="fragment" data-fragment-index="3" -->
+* Ratios <!-- .element: class="fragment" data-fragment-index="4" -->
+    * Ratios of two measurement variables (eg. head size/body size) <!-- .element: class="fragment" data-fragment-index="4" -->
 
 ---
 
 ## Dependent & independent variables
 
-* Which is which
+<ul>
+<li class="fragment">Independent variables</li>
+<ul>
+<li class="fragment">May cause change in dependent variables</li>
+</ul>
+<li class="fragment">Dependent variables</li>
+<ul>
+<li class="fragment">Is affected by changes in another variable</li>
+</ul>
+</ul>
+
+|||
+
+## Which is which?
+
+![Dendelion](C03_assets/Dandelion.jpg)
+
+* Nitrogen content of soil and density of dandelions <!-- .element: class="fragment" data-fragment-index="1" -->
+  * Nitrogen content might affect where dandelion plants live <!-- .element: class="fragment" data-fragment-index="2" -->
+  * What if dandelions use a lot of nitrogen from the soil? <!-- .element: class="fragment" data-fragment-index="3" -->
+* How could we test this? <!-- .element: class="fragment" data-fragment-index="4" -->
 
 ---
 
@@ -55,20 +77,49 @@
 
 ## Accuracy & Precision
 
-![ac & pre pic](link)
+![ac & pre](C03_assets/acc_pre.png)
 
-* Systematic error
-* Random error
+1. Random error <!-- .element: class="fragment" data-fragment-index="1" -->
+2. Systematic error <!-- .element: class="fragment" data-fragment-index="2" -->
+3. Perfect world <!-- .element: class="fragment" data-fragment-index="3" -->
 
 ---
 
 ## Populations & Samples
 
-ID several concepts
 * Population
+  * All possible observations
+
+![Todas os pokemons](link)
+
+|||
+
+## Populations & Samples
+
 * Sample
+  * Set of observations
+
+[Alguns pokemons](link)
+
+|||
+
+## Populations & Samples
+
 * Parameter
+
+
+|||
+
+
+## Populations & Samples
+
 * Sample size
+
+
+|||
+
+
+
 * Sampling
 
 ---
