@@ -38,7 +38,7 @@
 
 |||
 
-## Nominal (categorical)
+## Nominal
 
 ![Categorical variables](C03_assets/pokemon_bar.png)
 
