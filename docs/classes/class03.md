@@ -133,7 +133,7 @@
 
 |||
 
-## Parameter
+## Parameters
 
 ![DBZ_hair](C03_assets/DBZ_hair.png) <!-- .element: class="fragment" data-fragment-index="1" -->
 
@@ -141,7 +141,7 @@
 
 |||
 
-## Parameter
+## Parameters
 
 * Missing data
 
