@@ -8,10 +8,10 @@ rownames(scratch_df) = c("r1", "r2", "r3", "r4")
 ## 2. Diatoms data
 
 diatoms_data = read.csv("../diatoms_data.csv", header=TRUE, row.names=2, sep=",")
-diatoms_data["CC1", "Species richness"]
+diatoms_data["CC1", "Species.richness"]
 diatoms_data[,"pH"]
 diatoms_data["DC1",]
-diatoms_data[diatoms_data["River name" == "Snake River"], ]
+diatoms_data[diatoms_data$River.name == "Snake River", ]
 
 ## 3. Online data
 
