@@ -193,3 +193,102 @@ legend(1, st_range[2], c("charles","scott"),
 |||
 
 ## Getting data from an external file
+
+```R
+classes_data = read.csv("https://gitlab.com/StuntsPT/bp2018/raw/master/docs/classes/C04_assets/classes_data.txt", header=TRUE, sep="\t")
+# Now we load the data from an external source
+
+max_y = max(classes_data)
+# Get maximum value to adjust axes to
+
+plot_colors <- c("gray","red","orange")
+# Define plot colours previously to avoid large trains of code later on
+
+plot(classes_data$Charles, type="o", col=plot_colors[1], pch="x",
+     ylim=c(0,max_y), axes=FALSE, ann=FALSE)
+# We also have to adjust our plotting function
+
+axis(1, at=1:5, lab=c("Mon","Tue","Wed","Thu","Fri"))
+axis(2, at=4*0:max_y)
+# We also had to change the Y-axis to use the new variable
+
+lines(classes_data$Scott, type="o", pch=22, lty=2,
+      col=plot_colors[2])
+# The line for "Scott" also needs to refer to the new data source
+
+lines(classes_data$Logan, type="o", pch=14, lty=6, 
+      col=plot_colors[3])
+# There is new data, this time for "professor" Logan
+
+title(main="Students at the institute", col.main="#DAA520", font.main=8)
+title(xlab="Days", col.lab="darkgreen")
+title(ylab="Students", col.lab="darkgreen")
+
+legend(1, max_y, names(classes_data), cex=0.8, col=plot_colors, 
+       pch=c(4, 22, 14), lty=c(1,2,6));
+# The code to set the legend is also changed. can you tell why?
+# Maybe now it should be placed somewhere else...
+
+```
+
+[Alternate link](https://raw.githubusercontent.com/StuntsPT/BP2018/master/docs/classes/C04_assets/classes_data.txt)
+
+|||
+
+## "Saving the plot"
+
+```R
+classes_data = read.csv("https://gitlab.com/StuntsPT/bp2018/raw/master/docs/classes/C04_assets/classes_data.txt", header=TRUE, sep="\t")
+
+max_y = max(classes_data)
+plot_colors <- c("gray","red","orange")
+
+png(filename="C:\figure.png", height=295, width=300, 
+    bg="white")
+# In order to save a plot we first need to tell R some information
+# Can you tell what each option does?
+
+plot(classes_data$Charles, type="o", col=plot_colors[1], pch="x",
+     ylim=c(0,max_y), axes=FALSE, ann=FALSE)
+
+axis(1, at=1:5, lab=c("Mon","Tue","Wed","Thu","Fri"))
+axis(2, at=4*0:max_y)
+
+lines(classes_data$Scott, type="o", pch=22, lty=2,
+      col=plot_colors[2])
+
+lines(classes_data$Logan, type="o", pch=14, lty=6, 
+      col=plot_colors[3])
+
+title(main="Students at the institute", col.main="#DAA520", font.main=8)
+
+title(xlab="Days", col.lab="darkgreen")
+title(ylab="Students", col.lab="darkgreen")
+
+legend(1, max_y, names(classes_data), cex=0.8, col=plot_colors, 
+       pch=c(4, 22, 14), lty=c(1,2,6));
+
+dev.off()
+# Now that our plot is complete, we just have to 
+# "turn off" the device driver (which flushes output to our png image)
+```
+
+---
+
+## Summary
+
+|||
+
+## Summary
+
+<ul>
+  <li class⁼"fragment">`plot()` will start a new plot in R</li>
+  <ul>
+    <li class="fragment">`dev_off()` will end it</li>
+    <li class="fragment">We can keep adding to it until we finish it</li>
+  </ul>
+  <li class="fragment">`lines()` will allow us to plot additional lines</li>
+  <li class="fragment">`title()` allows for changing the title, subtitle and add axis lables</li>
+  <li class="fragment">`axis()` allows for axes manipulations</li>
+  <li class="fragment">`legend()` adds a legend to the plot</li>
+</ul>
