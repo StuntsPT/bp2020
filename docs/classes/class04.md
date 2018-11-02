@@ -580,7 +580,7 @@ boxplot(rdm0, rdm1, rdm2, rdm3, col="brown")
 
 ```R
 boxplot(mpg~cyl, data=mtcars, notch=TRUE,
-        col=(c("gold","darkgreen")),
+        col=(c("gold","darkgreen","red")),
         main="Mileage by engine type", xlab="# of cylinders",
         ylab="MPG")
 # Can you tell what we are doing here?
