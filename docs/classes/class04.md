@@ -544,7 +544,6 @@ hist(all_classes, col=heat.colors(length(brk)), breaks=brk,
 
 ![scott](C04_assets/scott.gif)
 
-
 ---
 
 ## Distribution sampling
@@ -562,7 +561,32 @@ hist(samples, col="lightblue", freq=F)
 
 ---
 
+## Almost forgot!
+
+```R
+rdm0 = rnorm(100)
+rdm1 = rnorm(100, 1)
+rdm2 = rnorm(100, 0, 0.5)
+rdm3 = rnorm(100, 1, 2)
+
+boxplot(rdm0, rdm1, rdm2)
+
+boxplot(rdm0, rdm1, rdm2, rdm3, col="brown")
+```
+
+|||
+
+## Boxplots can be more complex
+
+```R
+boxplot(mpg~cyl, data=mtcars, notch=TRUE,
+        col=(c("gold","darkgreen")),
+        main="Mileage by engine type", xlab="# of cylinders",
+        ylab="MPG")
+# Can you tell what we are doing here?
+```
+
+---
+
 ## Finally
-
-
 
