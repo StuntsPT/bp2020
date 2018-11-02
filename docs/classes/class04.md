@@ -277,18 +277,292 @@ dev.off()
 
 ## Summary
 
-|||
-
-## Summary
-
 <ul>
-  <li class⁼"fragment">`plot()` will start a new plot in R</li>
-  <ul>
-    <li class="fragment">`dev_off()` will end it</li>
-    <li class="fragment">We can keep adding to it until we finish it</li>
-  </ul>
+ <li class⁼"fragment">`plot()` will start a new plot in R</li>
+ <li class="fragment">We can keep changing it until we "close" it</li>
+ <ul>
   <li class="fragment">`lines()` will allow us to plot additional lines</li>
   <li class="fragment">`title()` allows for changing the title, subtitle and add axis lables</li>
   <li class="fragment">`axis()` allows for axes manipulations</li>
   <li class="fragment">`legend()` adds a legend to the plot</li>
+ </ul>
+ <li class="fragment">`dev_off()` will end it</li>
 </ul>
+
+---
+
+## Phew!
+
+![It's over](C04_assets/done.gif)
+
+---
+
+## Bar plots
+
+<ul>
+<li class="fragment">Bar plots are great for frequency data</li>
+<li class="fragment">They combine really well with data from the `table()` function</li>
+<li class="fragment">Let's look at the `barplot()` function!</li>
+</ul>
+
+|||
+
+## Bar plot basics
+
+```R
+classes_data = read.csv("https://gitlab.com/StuntsPT/bp2018/raw/master/docs/classes/C04_assets/classes_data.txt", header=TRUE, sep="\t")
+
+barplot(classes_data$Charles)
+# Try with Scott too
+```
+
+[Alternate Link](https://github.com/StuntsPT/BP2018/raw/master/docs/classes/C04_assets/classes_data.txt)
+
+|||
+
+### "Side by side"
+
+```R
+classes_data = read.csv("https://gitlab.com/StuntsPT/bp2018/raw/master/docs/classes/C04_assets/classes_data.txt", header=TRUE, sep="\t")
+
+barplot(as.matrix(classes_data), main="Institute", ylab= "Total Students",
+        beside=TRUE, col=rainbow(5))
+# Let's try plotting all classes at once!
+# And add some colour too!
+
+legend("topleft", c("Mon","Tue","Wed","Thu","Fri"), cex=0.6, 
+       bty="n", fill=rainbow(5));
+# Let's also add a (small) Legend, but let's remove the border this time.
+# Check the "bty" option documentation!
+# Check the "rainbow" function too!
+```
+
+|||
+
+## Focus on weekdays
+
+```R
+classes_data = read.csv("https://gitlab.com/StuntsPT/bp2018/raw/master/docs/classes/C04_assets/classes_data.txt", header=TRUE, sep="\t")
+
+barplot(t(classes_data), main="Institute", ylab="Total Students", 
+        col=heat.colors(3), space=0.1, cex.axis=0.8, las=1,
+        names.arg=c("Mon","Tue","Wed","Thu","Fri"), cex=0.8) 
+# Let's transpose the matrix to get a differente view (t())
+# Use heat colours instead (heat())
+# Add 10% space between each bar ("spcace" argument)
+# Decrease the size of labels, just because we can
+
+legend("topleft", names(classes_data), cex=0.8, fill=heat.colors(3));
+# We now add the legend. But it's not looking so good now. Is it?
+```
+
+|||
+
+## How can we improve the legend?
+
+```R
+classes_data = read.csv("https://gitlab.com/StuntsPT/bp2018/raw/master/docs/classes/C04_assets/classes_data.txt", header=TRUE, sep="\t")
+
+par(xpd=T, mar=par()$mar+c(0,0,0,4))
+# Let's add some space, right of our figure
+
+barplot(t(classes_data), main="Institute", ylab="Total Students", 
+        col=heat.colors(3), space=0.1, cex.axis=0.8, las=1,
+        names.arg=c("Mon","Tue","Wed","Thu","Fri"), cex=0.8) 
+
+legend(6, 30, names(classes_data), cex=0.8, fill=heat.colors(3));
+# Now we can set the figure to somewhere it won't cover any parts
+# of our plot
+```
+
+---
+
+## Summary
+
+<ul>
+ <li class⁼"fragment">`barplot()` will draw a barplot</li>
+ <li class="fragment">This function works in a similar fashion to `plot()`</li>
+ <li class="fragment">It is very versatile, when combined with the `t()` function</li>
+</ul>
+
+---
+
+## What about that `par` thing?
+
+<ul>
+ <li class⁼"fragment">`par()` contains the plotting parameters</li>
+ <ul>
+  <li class="fragment">It works like any other R object</li>
+ </ul>
+ <li class="fragment">Contains a lot of parameters, some of the most frequent are:</li>
+ <ul>
+  <li class="fragment">`mar()` - set internal margins</li>
+  <li class="fragment">`oma()` - set external margins</li>
+  <li class="fragment">`mgp()` - set axes distances</li>
+  <li class="fragment">`mfrow()` - set number of rows</li>
+  <li class="fragment">`mfcol()` - set number of columns</li>
+ </ul>
+</ul>
+
+|||
+
+## Using `par()`
+
+```R
+classes_data = read.csv("https://gitlab.com/StuntsPT/bp2018/raw/master/docs/classes/C04_assets/classes_data.txt", header=TRUE, sep="\t")
+
+par(mfrow=c(1,2))
+# Divides the drawing area in 2 columns
+
+barplot(t(classes_data), main="Institute", ylab="Total Students", 
+        col=heat.colors(3), space=0.1, cex.axis=0.8, las=1,
+        names.arg=c("Mon","Tue","Wed","Thu","Fri"), cex=0.8) 
+barplot(as.matrix(classes_data), main="Institute", ylab= "Total Students",
+        beside=TRUE, col=rainbow(5))
+# Now we tell R to draw 2 plots at the same time
+```
+
+---
+
+## Getting there
+
+![Burn](C04_assets/burns.gif)
+
+---
+
+## Pie charts
+
+<ul>
+ <li class⁼"fragment">`pie()` will plot a pie chart</li>
+ <li class="fragment">It's parameters are similar to those of other plots</li>
+ <ul>
+  <li class="fragment">But are usually a lot less flexible</li>
+ </ul>
+</ul>
+
+|||
+
+## Pie charts
+
+![have fun](C04_assets/have_fun.gif)
+
+---
+
+## Histograms
+
+<ul>
+ <li class⁼"fragment">`hist()` will plot an histogram</li>
+ <li class="fragment">Are great for representing data distributions</li>
+ <li class="fragment">R will bin the data for you</li>
+ <ul>
+  <li class="fragment">But of course, you can control that too</li>
+ </ul>
+</ul>
+
+|||
+
+## Basic histogram
+
+```R
+classes_data = read.csv("https://gitlab.com/StuntsPT/bp2018/raw/master/docs/classes/C04_assets/classes_data.txt", header=TRUE, sep="\t")
+
+hist(classes_data$Charles)
+```
+
+|||
+
+## Adding more data
+
+```R
+classes_data = read.csv("https://gitlab.com/StuntsPT/bp2018/raw/master/docs/classes/C04_assets/classes_data.txt", header=TRUE, sep="\t")
+
+all_classes = c(classes_data$Charles, classes_data$Scott, 
+                classes_data$Logan)
+# We must concatenate all our columns into a singhle vector to get full data
+
+hist(all_classes, col="gold")
+# We draw the plot again, this time with some colour...
+# Well, that didn't go all that well, did it?
+```
+
+|||
+
+## Controlling the bins
+
+```R
+classes_data = read.csv("https://gitlab.com/StuntsPT/bp2018/raw/master/docs/classes/C04_assets/classes_data.txt", header=TRUE, sep="\t")
+
+all_classes = c(classes_data$Charles, classes_data$Scott, 
+                classes_data$Logan)
+
+max_num <- max(all_classes)
+# Get the highest value to help with binning
+
+hist(all_classes, col="gold", breaks=max_num, 
+     xlim=c(0,max_num), right=F, main="Class attendances", las=1)
+# Define the "breaks", "xlim" and add a title
+# What does "las" do?
+# What does "right" do?
+```
+
+|||
+
+## Even more control!
+
+```R
+classes_data = read.csv("https://gitlab.com/StuntsPT/bp2018/raw/master/docs/classes/C04_assets/classes_data.txt", header=TRUE, sep="\t")
+
+all_classes = c(classes_data$Charles, classes_data$Scott, 
+                classes_data$Logan)
+
+max_num <- max(all_classes)
+
+brk <- c(0,1,2,3,4,10,11,12,13,14,15)
+# Set the breaks ourselves
+
+hist(all_classes, col=heat.colors(length(brk)), breaks=brk, 
+     xlim=c(0,max_num), right=F, main="Probability Density", 
+     las=1, freq=F)
+# We now use our own breaks, and turn the plot into a
+# probability density plot (freq)
+# We also switch the static colour with a gradient
+```
+
+---
+
+## Summary
+
+<ul>
+ <li class⁼"fragment">Histograms are very much like other plots</li>
+ <li class="fragment">The main difference is in binning</li>
+ <li class="fragment">There are many more options</li>
+</ul>
+
+---
+
+## Why?
+
+![scott](C04_assets/scott.gif)
+
+
+---
+
+## Distribution sampling
+
+<ul>
+ <li class⁼"fragment">We can use R to sample known distributions</li>
+ <li class="fragment">Histograms are great for that too</li>
+</ul>
+
+```R
+samples = rnorm(1000)
+
+hist(samples, col="lightblue", freq=F)
+```
+
+---
+
+## Finally
+
+
+
