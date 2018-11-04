@@ -70,32 +70,22 @@ The *t-test* can be used to:
 ### Student's *t-test*
 
 ```R
-x <- seq(-4
- 4, length=100)
+x <- seq(-4, 4, length=100)
 hx <- dnorm(x)
 
-degf <- c(1
- 3, 8, 30)
-colors <- c("red"
- "blue", "darkgreen", "gold", "black")
-labels <- c("df=1"
- "df=3", "df=8", "df=30", "normal")
+degf <- c(1, 3, 8, 30)
+colors <- c("red", "blue", "darkgreen", "gold", "black")
+labels <- c("df=1", "df=3", "df=8", "df=30", "normal")
 
-plot(x
- hx, type="l", lty=2, xlab="x value",
-     ylab="Density"
- main="Comparison of t Distributions")
+plot(x, hx, type="l", lty=2, xlab="x value",
+     ylab="Density", main="Comparison of t Distributions")
 
 for (i in 1:4){
-    lines(x
- dt(x,degf[i]), lwd=2, col=colors[i])
+  lines(x, dt(x,degf[i]), lwd=2, col=colors[i])
 }
 
-legend("topright"
- inset=.05, title="Distributions",
-       labels
- lwd=2, lty=c(1, 1, 1, 1, 2), col=colors)
-
+legend("topright", inset=.05, title="Distributions",
+       labels, lwd=2, lty=c(1, 1, 1, 1, 2), col=colors)
 ```
 
 |||
