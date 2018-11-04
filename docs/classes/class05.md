@@ -25,7 +25,7 @@
 
 ### Why are they necessary?
 
-![Pop vs sampling](C06_assets/Pop_vs_sampling.png)
+![Pop vs sampling](C05_assets/Pop_vs_sampling.png)
 
 When the goal is to make inferences regarding the population
  based on a sample. <!-- .element: class="fragment" data-fragment-index="1" -->
@@ -63,7 +63,7 @@ The *t-test* can be used to:
 * Compare two independent samples <!-- .element: class="fragment" data-fragment-index="2" -->
 * Compare two dependent samples <!-- .element: class="fragment" data-fragment-index="3" -->
 
-![T-test distribution](C06_assets/t-dists.png) <!-- .element: class="fragment" data-fragment-index="4" -->
+![T-test distribution](C05_assets/t-dists.png) <!-- .element: class="fragment" data-fragment-index="4" -->
 
 |||
 
@@ -105,7 +105,7 @@ legend("topright"
 * A *t-value* is obtained by comparing the two datasets
 * This value is compared to the tails of the distribution
 
-![norm. dist with alpha](C06_assets/alpha.png)
+![norm. dist with alpha](C05_assets/alpha.png)
 
 ---
 
@@ -113,7 +113,7 @@ legend("topright"
 
 * Single sample tests are used to compare a sample against a single value:
 	* "Is this sample's value significantly different from a specific value?" <!-- .element: class="fragment" data-fragment-index="1" -->
-<center>![Single sample test](C06_assets/Single_sample.png)</center> <!-- .element: class="fragment" data-fragment-index="2" -->
+<center>![Single sample test](C05_assets/Single_sample.png)</center> <!-- .element: class="fragment" data-fragment-index="2" -->
 
 ---
 
@@ -133,7 +133,7 @@ Let's consider: <!-- .element: class="fragment" data-fragment-index="2" -->
 ### Single sample *t-test* example
 
 ```R
-diatoms = read.csv(url("https://raw.githubusercontent.com/StuntsPT/BP2017/master/classes/C06_assets/Dados_diatoms_heavymetals.csv"))
+diatoms = read.csv(url("https://raw.githubusercontent.com/StuntsPT/BP2017/master/classes/C05_assets/Dados_diatoms_heavymetals.csv"))
 ph = diatoms$pH
 
 shapiro.test(ph)
@@ -155,7 +155,7 @@ Is it above the reference value for rivers (10 μg/L)? <!-- .element: class="fra
 |||
 
 ```R
-diatoms = read.csv(url("https://raw.githubusercontent.com/StuntsPT/BP2017/master/classes/C06_assets/Dados_diatoms_heavymetals.csv"))
+diatoms = read.csv(url("https://raw.githubusercontent.com/StuntsPT/BP2017/master/classes/C05_assets/Dados_diatoms_heavymetals.csv"))
 zn = diatoms$Zn
 
 shapiro.test(zn)
@@ -173,7 +173,7 @@ wilcox.test(zn
 * 2 samples tests are used to compare the values of two samples.
 	* "Are the values of these two samples significantly different from each other?" <!-- .element: class="fragment" data-fragment-index="1" -->
 
-![Two indep. samples](C06_assets/Two_indep_samples.png) <!-- .element: class="fragment" data-fragment-index="2" -->
+![Two indep. samples](C05_assets/Two_indep_samples.png) <!-- .element: class="fragment" data-fragment-index="2" -->
 
 ---
 
@@ -195,7 +195,7 @@ Is the "Dissolved oxygen" different between Northern and Southern rivers?
 ### 2 samples *t-test* example
 
 ```R
-diatoms = read.csv(url("https://raw.githubusercontent.com/StuntsPT/BP2017/master/classes/C06_assets/Dados_diatoms_heavymetals.csv"))
+diatoms = read.csv(url("https://raw.githubusercontent.com/StuntsPT/BP2017/master/classes/C05_assets/Dados_diatoms_heavymetals.csv"))
 north_rivers_doxy = diatoms$Doxy[diatoms$Stream == "ER" | diatoms$Stream == "BR" | diatoms$Stream == "SR"]
 south_rivers_doxy = diatoms$Doxy[diatoms$Stream == "AR" | diatoms$Stream == "CC" | diatoms$Stream == "SPR"]
 
@@ -213,7 +213,7 @@ t.test(x=north_rivers_doxy
 Is the "Alkalinity" different between Northern and Southern rivers?
 
 ```R
-diatoms = read.csv(url("https://raw.githubusercontent.com/StuntsPT/BP2017/master/classes/C06_assets/Dados_diatoms_heavymetals.csv"))
+diatoms = read.csv(url("https://raw.githubusercontent.com/StuntsPT/BP2017/master/classes/C05_assets/Dados_diatoms_heavymetals.csv"))
 north_rivers_alk = diatoms$Alk[diatoms$Stream == "ER" | diatoms$Stream == "BR" | diatoms$Stream == "SR"]
 south_rivers_alk = diatoms$Alk[diatoms$Stream == "AR" | diatoms$Stream == "CC" | diatoms$Stream == "SPR"]
 
@@ -236,7 +236,7 @@ If the samples are not independent
  before and after eating <!-- .element: class="fragment" data-fragment-index="2" -->
 	* Size of the left and right pectoral fins of fish <!-- .element: class="fragment" data-fragment-index="3" -->
 
-![Dependent samples](C06_assets/Dependent_samples.png) <!-- .element: class="fragment" data-fragment-index="4" -->
+![Dependent samples](C05_assets/Dependent_samples.png) <!-- .element: class="fragment" data-fragment-index="4" -->
 
 ---
 
@@ -245,10 +245,10 @@ If the samples are not independent
 Has the rivers' pH changed significantly in the last 25 years?
 
 ```R
-diatoms = read.csv(url("https://raw.githubusercontent.com/StuntsPT/BP2017/master/classes/C06_assets/Dados_diatoms_heavymetals.csv"))
+diatoms = read.csv(url("https://raw.githubusercontent.com/StuntsPT/BP2017/master/classes/C05_assets/Dados_diatoms_heavymetals.csv"))
 ph = diatoms$pH
 
-ph2017 = read.csv(url("https://raw.githubusercontent.com/StuntsPT/BP2017/master/classes/C06_assets/diatoms_ph_2017.csv"))$pH
+ph2017 = read.csv(url("https://raw.githubusercontent.com/StuntsPT/BP2017/master/classes/C05_assets/diatoms_ph_2017.csv"))$pH
 
 shapiro.test(ph)
 shapiro.test(ph2017)
@@ -261,10 +261,10 @@ t.test(x=ph, y=ph2017, paired=TRUE, conf.level=0.95)
 ### N-P equivalent - Paired Wilcoxon test
 
 ```R
-diatoms = read.csv(url("https://raw.githubusercontent.com/StuntsPT/BP2017/master/classes/C06_assets/Dados_diatoms_heavymetals.csv"))
+diatoms = read.csv(url("https://raw.githubusercontent.com/StuntsPT/BP2017/master/classes/C05_assets/Dados_diatoms_heavymetals.csv"))
 ph = diatoms$pH
 
-ph2017 = read.csv(url("https://raw.githubusercontent.com/StuntsPT/BP2017/master/classes/C06_assets/diatoms_ph_2017.csv"))$pH
+ph2017 = read.csv(url("https://raw.githubusercontent.com/StuntsPT/BP2017/master/classes/C05_assets/diatoms_ph_2017.csv"))$pH
 
 shapiro.test(ph)
 shapiro.test(ph2017)
@@ -281,19 +281,19 @@ wilcox.test(x=ph, y=ph2017, paired=TRUE, conf.level=0.95)
 
 ### Single sample
 
-![Single sample](C06_assets/Single_sample_tests.png)
+![Single sample](C05_assets/Single_sample_tests.png)
 
 ---
 
 ### Two independent samples
 
-![Independent samples](C06_assets/Two_indep_samples_tests.png)
+![Independent samples](C05_assets/Two_indep_samples_tests.png)
 
 ---
 
 ### Two dependent samples
 
-![Single sample](C06_assets/Two_dep_samples_tests.png)
+![Single sample](C05_assets/Two_dep_samples_tests.png)
 
 ---
 
@@ -312,7 +312,7 @@ wilcox.test(x=ph, y=ph2017, paired=TRUE, conf.level=0.95)
 
 ### Type II Error
 
-![Type II](C06_assets/TypeII.jpg)
+![Type II](C05_assets/TypeII.jpg)
 
 ---
 
