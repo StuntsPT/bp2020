@@ -140,10 +140,8 @@ ph = diatoms$pH
 
 shapiro.test(ph)
 
-t.test(ph
- mu=7, conf.level=0.95)
-t.test(ph
- mu=7.7, conf.level=0.95)
+t.test(ph, mu=7, conf.level=0.95)
+t.test(ph, mu=7.7, conf.level=0.95)
 ```
 
 ---
@@ -162,10 +160,8 @@ zn = diatoms$Zn
 
 shapiro.test(zn)
 
-wilcox.test(zn
- mu=5000, alternative="less")
-wilcox.test(zn
- mu=10, alternative="greater")
+wilcox.test(zn, mu=5000, alternative="less")
+wilcox.test(zn, mu=10, alternative="greater")
 ```
 
 ---
@@ -204,8 +200,7 @@ south_rivers_doxy = diatoms$Doxy[diatoms$Stream == "AR" | diatoms$Stream == "CC"
 shapiro.test(north_rivers_doxy)
 shapiro.test(south_rivers_doxy)
 
-t.test(x=north_rivers_doxy
- y=south_rivers_doxy, conf.level=0.95)
+t.test(x=north_rivers_doxy, y=south_rivers_doxy, conf.level=0.95)
 ```
 
 ---
@@ -222,8 +217,7 @@ south_rivers_alk = diatoms$Alk[diatoms$Stream == "AR" | diatoms$Stream == "CC" |
 shapiro.test(north_rivers_alk)
 shapiro.test(south_rivers_alk)
 
-wilcox.test(x=north_rivers_alk
- y=south_rivers_alk, conf.level=0.95)
+wilcox.test(x=north_rivers_alk, y=south_rivers_alk, conf.level=0.95)
 ```
 
 ---
