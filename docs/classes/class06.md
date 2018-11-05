@@ -26,7 +26,7 @@
 * Is computationally simple <!-- .element: class="fragment" data-fragment-index="1" -->
 * Uses the "chi-square" distribution <!-- .element: class="fragment" data-fragment-index="2" -->
 
-![Chi² distribution](C07_assets/Chi2_dist.png) <!-- .element: class="fragment" data-fragment-index="3" -->
+![Chi² distribution](C06_assets/Chi2_dist.png) <!-- .element: class="fragment" data-fragment-index="3" -->
 
 |||
 
@@ -131,7 +131,7 @@ p.adjust(p_vals, method="fdr")
 	* Is computationally intensive <!-- .element: class="fragment" data-fragment-index="3" -->
 	* Also called a "binomial" or "multinomial" test <!-- .element: class="fragment" data-fragment-index="4" -->
 
-![Binomial dist](C07_assets/binomial_plot.png) <!-- .element: class="fragment" data-fragment-index="5" -->
+![Binomial dist](C06_assets/binomial_plot.png) <!-- .element: class="fragment" data-fragment-index="5" -->
 
 |||
 
@@ -184,7 +184,7 @@ if(!require("XNomial")){
 * Is computationally simple <!-- .element: class="fragment" data-fragment-index="1" -->
 * Uses the "chi-square" distribution <!-- .element: class="fragment" data-fragment-index="2" -->
 
-![Chi² distribution](C07_assets/Chi2_dist.png) <!-- .element: class="fragment" data-fragment-index="3" -->
+![Chi² distribution](C06_assets/Chi2_dist.png) <!-- .element: class="fragment" data-fragment-index="3" -->
 
 |||
 
@@ -300,7 +300,7 @@ fisher.test(small_samples_matrix,
 * To measure the strength of the association between variables (r²) <!-- .element: class="fragment" data-fragment-index="1" -->
 * To obtain an equation suitable to make predictions <!-- .element: class="fragment" data-fragment-index="2" -->
 
-![Regression example](C07_assets/example_regression.png) <!-- .element: class="fragment" data-fragment-index="3" -->
+![Regression example](C06_assets/example_regression.png) <!-- .element: class="fragment" data-fragment-index="3" -->
 
 |||
 
@@ -392,7 +392,7 @@ Town                  State  Latitude  Species
 Data = read.table(textConnection(Input),header=TRUE)
 ```
 
-[Alternative](https://raw.githubusercontent.com/StuntsPT/BP2017/master/classes/C07_assets/species_diversity.tsv)
+[Alternative](https://raw.githubusercontent.com/StuntsPT/BP2017/master/classes/C06_assets/species_diversity.tsv)
 
 |||
 
