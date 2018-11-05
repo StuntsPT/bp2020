@@ -1,9 +1,9 @@
 # Exercises 2 possible solutions
 
-magic_beans = read.csv(url("https://raw.githubusercontent.com/StuntsPT/BP2017/master/classes/exercises/Magic_beans_lower.csv"), header=TRUE, row.names=1)
+magic_beans = read.csv(url("https://gitlab.com/StuntsPT/bp2018/raw/master/docs/classes/exercises/Magic_beans.csv"), header=TRUE, row.names=1)
 
 # Size category
-size_category_counts = data.frame(table(magic_beans$size.category))
+size_category_counts = data.frame(table(magic_beans$Size.category))
 
 barplot(height=size_category_counts$Freq,
         width=c(3,2,1),
@@ -14,7 +14,7 @@ barplot(height=size_category_counts$Freq,
         main="Magic bean counts per size category")
 
 # Colours
-colour_counts = data.frame(table(magic_beans$colour))
+colour_counts = data.frame(table(magic_beans$Colour))
 
 barplot(height=colour_counts$Freq,
         width=1,
