@@ -123,7 +123,7 @@ Let's consider: <!-- .element: class="fragment" data-fragment-index="2" -->
 ### Single sample *t-test* example
 
 ```R
-diatoms = read.csv(url("https://raw.githubusercontent.com/StuntsPT/BP2017/master/classes/C05_assets/Dados_diatoms_heavymetals.csv"))
+diatoms = read.csv(url("https://raw.githubusercontent.com/StuntsPT/BP2018/master/classes/C05_assets/Dados_diatoms_heavymetals.csv"))
 ph = diatoms$pH
 
 shapiro.test(ph)
@@ -145,7 +145,7 @@ Is it above the reference value for rivers (10 μg/L)? <!-- .element: class="fra
 |||
 
 ```R
-diatoms = read.csv(url("https://raw.githubusercontent.com/StuntsPT/BP2017/master/classes/C05_assets/Dados_diatoms_heavymetals.csv"))
+diatoms = read.csv(url("https://raw.githubusercontent.com/StuntsPT/BP2018/master/classes/C05_assets/Dados_diatoms_heavymetals.csv"))
 zn = diatoms$Zn
 
 shapiro.test(zn)
@@ -185,7 +185,7 @@ Is the "Dissolved oxygen" different between Northern and Southern rivers?
 ### 2 samples *t-test* example
 
 ```R
-diatoms = read.csv(url("https://raw.githubusercontent.com/StuntsPT/BP2017/master/classes/C05_assets/Dados_diatoms_heavymetals.csv"))
+diatoms = read.csv(url("https://raw.githubusercontent.com/StuntsPT/BP2018/master/classes/C05_assets/Dados_diatoms_heavymetals.csv"))
 north_rivers_doxy = diatoms$Doxy[diatoms$Stream == "ER" | diatoms$Stream == "BR" | diatoms$Stream == "SR"]
 south_rivers_doxy = diatoms$Doxy[diatoms$Stream == "AR" | diatoms$Stream == "CC" | diatoms$Stream == "SPR"]
 
@@ -203,7 +203,7 @@ t.test(x=north_rivers_doxy
 Is the "Alkalinity" different between Northern and Southern rivers?
 
 ```R
-diatoms = read.csv(url("https://raw.githubusercontent.com/StuntsPT/BP2017/master/classes/C05_assets/Dados_diatoms_heavymetals.csv"))
+diatoms = read.csv(url("https://raw.githubusercontent.com/StuntsPT/BP2018/master/classes/C05_assets/Dados_diatoms_heavymetals.csv"))
 north_rivers_alk = diatoms$Alk[diatoms$Stream == "ER" | diatoms$Stream == "BR" | diatoms$Stream == "SR"]
 south_rivers_alk = diatoms$Alk[diatoms$Stream == "AR" | diatoms$Stream == "CC" | diatoms$Stream == "SPR"]
 
@@ -235,10 +235,10 @@ If the samples are not independent
 Has the rivers' pH changed significantly in the last 25 years?
 
 ```R
-diatoms = read.csv(url("https://raw.githubusercontent.com/StuntsPT/BP2017/master/classes/C05_assets/Dados_diatoms_heavymetals.csv"))
+diatoms = read.csv(url("https://raw.githubusercontent.com/StuntsPT/BP2018/master/classes/C05_assets/Dados_diatoms_heavymetals.csv"))
 ph = diatoms$pH
 
-ph2017 = read.csv(url("https://raw.githubusercontent.com/StuntsPT/BP2017/master/classes/C05_assets/diatoms_ph_2017.csv"))$pH
+ph2017 = read.csv(url("https://raw.githubusercontent.com/StuntsPT/BP2018/master/classes/C05_assets/diatoms_ph_2017.csv"))$pH
 
 shapiro.test(ph)
 shapiro.test(ph2017)
@@ -251,10 +251,10 @@ t.test(x=ph, y=ph2017, paired=TRUE, conf.level=0.95)
 ### N-P equivalent - Paired Wilcoxon test
 
 ```R
-diatoms = read.csv(url("https://raw.githubusercontent.com/StuntsPT/BP2017/master/classes/C05_assets/Dados_diatoms_heavymetals.csv"))
+diatoms = read.csv(url("https://raw.githubusercontent.com/StuntsPT/BP2018/master/classes/C05_assets/Dados_diatoms_heavymetals.csv"))
 ph = diatoms$pH
 
-ph2017 = read.csv(url("https://raw.githubusercontent.com/StuntsPT/BP2017/master/classes/C05_assets/diatoms_ph_2017.csv"))$pH
+ph2017 = read.csv(url("https://raw.githubusercontent.com/StuntsPT/BP2018/master/classes/C05_assets/diatoms_ph_2017.csv"))$pH
 
 shapiro.test(ph)
 shapiro.test(ph2017)
