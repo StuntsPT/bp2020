@@ -23,7 +23,7 @@ barplot(height=colour_counts$Freq,
         ylab="Magic beans",
         xlab="Colour category",
         main="Magic bean counts per colour",
-        ylim=c(0,350))
+        ylim=c(0,400))
 
 # Hypothesis tests
 # 2.1:
@@ -50,7 +50,7 @@ q_values = p.adjust(p_vals, method="fdr")
 
 # 2.3
 library("XNomial")
-xmulti(obs=table(magic_beans$size.category[magic_beans$colour == "red"]), expr=c(1,1,1))
+xmulti(obs=table(magic_beans$Size.category[magic_beans$Colour == "Red"]), expr=c(1,1,1))
 # The multinomial test indicates that the red beans' size categories are not significantly different from the expectation of 1:1:1
 
 # 2.4
@@ -59,9 +59,11 @@ chisq.test(table(magic_beans))
 # The Chi² test does not reject H0, therefore independence between colour and size category prportions is assumed.
 
 # 2.5
-library("XNomial")
-xmulti(obs=c(89,322,16), expr=c(5,15,1))
-# The porportions of troop types aboard the Imperial Star Destroyer are not significantly different fro what is expected for a ground strike.
+obs=c(89,322,16)
+exp=c(5/21,15/21,1/21)
+
+binom.test(x=obs[1], n=sum(obs), p=exp[1], alternative="greater")
+# The porportion of tie fighters found aboard the Imperial Star Destroyer are not significantly different from what is expected for a ground strike.
 # The rebel base should deploy defences to react to a ground assault.
 
 ## Regression
@@ -75,8 +77,13 @@ plot(x=faithful$eruptions,
      main="Geyser eruption duration Vs. interval before the eruption")
 
 # 3.2
-cor.test(x=faithful$eruptions, y=faithful$waiting, methos="pearson", conf.level=0.95)
-# The strength of the correlation "r" is 0.9008112. It is significant (p-value < 2.2e-16)
+shapiro.test(faithful$waiting)
+shapiro.test(faithful$eruptions)
+cor.test(x=faithful$eruptions, y=faithful$waiting, method="spearman", conf.level=0.95)
+model = lm(faithful$waiting ~ faithful$eruptions)
+summary(model)
+# The R-squared value is of 0.8115 and the correlation is significant.
 
 # 3.3
-abline(lm(faithful$waiting ~ faithful$eruptions), col="blue", lwd=3)
+abline(model, col="blue", lwd=3)
+
