@@ -1,3 +1,15 @@
+### Class #6
+
+#### Bioinformática Prática 2018
+
+<img src="C01_assets/logo-FCUL.png" style="background:none; border:none; box-shadow:none;">
+
+<center>Francisco Pina Martins</center>
+
+<center>[@FPinaMartins](https://twitter.com/FPinaMartins)</center>
+
+---
+
 ## Hypotheses tests II
 
 ---
@@ -101,21 +113,63 @@ Are these proportions according to the expectation of 1:2:1 ? <!-- .element: cla
 
 |||
 
-```R
-p_vals = c()
+## Multiple testing example
 
+```R
 obs = c(1300, 3000, 1500)
 exp = c(0.25, 0.5, 0.25)
 
 chisq.test(x=obs, p=exp)
 
+p_vals = c()
+
+partial_obs = c(obs[1], sum(obs[-1]))
+partial_exp = c(exp[1], sum(exp[-1]))
+part_chisq = chisq.test(x=partial_obs, p=partial_exp)
+
+pvalue = part_chisq$p.value
+
+p_vals = c(p_vals, pvalue)
+
+partial_obs = c(obs[2], sum(obs[-2]))
+partial_exp = c(exp[2], sum(exp[-2]))
+part_chisq = chisq.test(x=partial_obs, p=partial_exp)
+
+pvalue = part_chisq$p.value
+
+p_vals = c(p_vals, pvalue)
+
+partial_obs = c(obs[3], sum(obs[-3]))
+partial_exp = c(exp[3], sum(exp[-3]))
+part_chisq = chisq.test(x=partial_obs, p=partial_exp)
+
+pvalue = part_chisq$p.value
+
+p_vals = c(p_vals, pvalue)
+
+print(p_vals)
+p.adjust(p_vals, method="fdr")
+```
+
+|||
+
+## Multiple testing example
+
+```R
+obs = c(1300, 3000, 1500)
+exp = c(0.25, 0.5, 0.25)
+
+chisq.test(x=obs, p=exp)
+
+p_vals = c()
+
 for (i in 1:length(obs)) {
     partial_obs = c(obs[i], sum(obs[-i]))
     partial_exp = c(exp[i], sum(exp[-i]))
     part_chisq = chisq.test(x=partial_obs, p=partial_exp)
-
+    
     p_vals[i] = part_chisq$p.value
-    }
+}
 
 print(p_vals)
 p.adjust(p_vals, method="fdr")
@@ -209,7 +263,7 @@ side_effects_matrix = matrix(c(R1, R2),
                              nrow=2,
                              byrow=TRUE)
 
-# Naming if not mandatory:
+# Naming is not mandatory:
 rownames(side_effects_matrix) = c("Night", "Morning")
 colnames(side_effects_matrix) = c("No.side.effects",
                                   "Side.effects")
@@ -392,7 +446,7 @@ Town                  State  Latitude  Species
 Data = read.table(textConnection(Input),header=TRUE)
 ```
 
-[Alternative](https://raw.githubusercontent.com/StuntsPT/BP2017/master/classes/C06_assets/species_diversity.tsv)
+[Alternative](https://gitlab.com/StuntsPT/bp2018/raw/master/docs/classes/C06_assets/species_diversity.tsv)
 
 |||
 
