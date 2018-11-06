@@ -22,7 +22,8 @@ barplot(height=colour_counts$Freq,
         col=as.vector(colour_counts$Var1),
         ylab="Magic beans",
         xlab="Colour category",
-        main="Magic bean counts per colour")
+        main="Magic bean counts per colour",
+        ylim=c(0,350))
 
 # Hypothesis tests
 # 2.1:
