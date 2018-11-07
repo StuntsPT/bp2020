@@ -1,3 +1,15 @@
+### Class #8
+
+#### Bioinformática Prática 2018
+
+<img src="C01_assets/logo-FCUL.png" style="background:none; border:none; box-shadow:none;">
+
+<center>Francisco Pina Martins</center>
+
+<center>[@FPinaMartins](https://twitter.com/FPinaMartins)</center>
+
+---
+
 ## Exploratory data analysis
 
 ### Clustering analysis
@@ -28,7 +40,9 @@
 * For easy visualization of (di)similarities <!-- .element: class="fragment" data-fragment-index="1" -->
 * As a starting point for other analyses <!-- .element: class="fragment" data-fragment-index="2" -->
 
-#### Focus on dendrogram analysis <!-- .element: class="fragment" data-fragment-index="3" -->
+---
+
+## Dendrogram analysis
 
 ---
 
@@ -37,7 +51,7 @@
 * First a distance matrix must be obtained
 	* More specifically - a triangular distance matrix <!-- .element: class="fragment" data-fragment-index="1" -->
 * Then the distances are converted into a dendrogram <!-- .element: class="fragment" data-fragment-index="2" -->
-	* This dendrogram will display the distance between the objects in a graphical manner <!-- .element: class="fragment" data-fragment-index="3" -->
+	* Displays the distance between the objects in a graphical manner <!-- .element: class="fragment" data-fragment-index="3" -->
 * Exploratory technique! <!-- .element: class="fragment" data-fragment-index="4" -->
 
 [Know more](https://davetang.org/muse/2013/08/15/distance-matrix-computation/) <!-- .element: class="fragment" data-fragment-index="5" -->
@@ -83,9 +97,9 @@ legend("topleft",
 ```R
 euclidean_distance(scater_data[1,], scater_data[2,])
 
-dist(scater_data)
+triang = dist(scater_data)
 
-plot(hclust(dist(scater_data),method="complete"))
+plot(hclust(triang, method="complete"))
 ```
 
 ---
@@ -175,14 +189,19 @@ plot(hclust(dist(student_matrix),method="average"))
 wine <- read.table("http://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data", sep=",")
 
 # Add column names
-colnames(wine) <- c("Cultivar","Alcohol","Malic acid","Ash","Alcalinity of ash", "Magnesium", "Total phenols", "Flavanoids", "Nonflavanoid phenols", "Proanthocyanins", "Color intensity", "Hue", "OD280/OD315 of diluted wines", "Proline")
+colnames(wine) <- c("Cultivar", "Alcohol", "Malic acid", "Ash",
+                    "Alcalinity of ash", "Magnesium", "Total phenols",
+                    "Flavanoids", "Nonflavanoid phenols", "Proanthocyanins",
+                    "Color intensity", "Hue", "OD280/OD315 of diluted wines",
+                    "Proline")
 
 # The first column corresponds to the cultivar class
 cultivar_classes <- factor(wine$Cultivar)
 
 winePCA <- prcomp(scale(wine[,-1]))
 plot(winePCA$x[,1:2], col = cultivar_classes, main="PCA test plot")
-legend("bottomright", legend = c("Cv1","Cv2","Cv3"), pch = 1, col = c("black","red","green"))
+legend("bottomright", legend = c("Cv1","Cv2","Cv3"), pch = 1,
+       col = c("black","red","green"))
 ```
 
 ---
@@ -197,11 +216,15 @@ legend("bottomright", legend = c("Cv1","Cv2","Cv3"), pch = 1, col = c("black","r
 
 ### When "vanilla" R just isn't enough
 
-* One of the good things about R is it's expandability
-* It is possible to "import" thousands of external 3rd party packages <!-- .element: class="fragment" data-fragment-index="1" -->
-* Bioconductor is more than just a package. It's a 3rd party package repository <!-- .element: class="fragment" data-fragment-index="2" -->
-	* It hosts 1473 bioinformatics related packages (at the time of writing) <!-- .element: class="fragment" data-fragment-index="3" -->
-	* It is very easy to use directly from R <!-- .element: class="fragment" data-fragment-index="4" -->
+<ul>
+<li class="fragment">One of the good things about R is it's expandability</li>
+<li class="fragment">It is possible to "import" thousands of external 3rd party packages</li>
+<li class="fragment">Bioconductor is more than just a package. It's a 3rd party package repository</li>
+  <ul>
+  <li class="fragment">It hosts ~~1473~~ 1649 bioinformatics related packages (at the time of writing)</li>
+  <li class="fragment">It is very easy to use directly from R</li>
+  </ul>
+</ul>
 
 ---
 
@@ -224,12 +247,14 @@ Next we calculate the PCA and plot it
 
 ```R
 # Calculate PCA
-winePCAmethods <- pca(wine[,-1], scale="uv", center=TRUE, nPcs=2, method="svd")
+winePCAmethods = pca(wine[,-1], scale="uv", center=TRUE, nPcs=2, method="svd")
 
 # Plot it
 slplot(winePCAmethods,
        scol=cultivar_classes,
        scoresLoadings=c(TRUE,FALSE))
+legend("bottomright", legend = c("Cv1","Cv2","Cv3"), pch = 1,
+       col = c("black","red","green"))
 slplot(winePCAmethods,
        scol=cultivar_classes,
        scoresLoadings=c(FALSE,TRUE))
@@ -255,8 +280,9 @@ winePCAmethods@R2
 Let's test it!
 
 ```R
-t.test(x=wine$Ash[wine$Cultivar == "3"], y=wine$Ash[wine$Cultivar == "1"])
-t.test(x=wine$Ash[wine$Cultivar == "2"], y=wine$Ash[wine$Cultivar == "1"])
+shapiro.test(wine$Ash)
+wilcox.test(x=wine$Ash[wine$Cultivar == "3"], y=wine$Ash[wine$Cultivar == "1"])
+wilcox.test(x=wine$Ash[wine$Cultivar == "2"], y=wine$Ash[wine$Cultivar == "1"])
 ```
 
 
