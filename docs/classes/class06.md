@@ -256,8 +256,12 @@ if(!require("XNomial")){
 ### Chi² test of independence example
 
 ```R
-R1 = c(4682, 30)
-R2 = c(8813, 76)
+total_night = 4682
+se_night = 30
+total_morning = 8813
+se_morning = 76
+R1 = c((total_night - se_night), se_night)
+R2 = c((total_morning - se_morning), se_morning)
 
 side_effects_matrix = matrix(c(R1, R2),
                              nrow=2,
