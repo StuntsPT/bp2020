@@ -281,8 +281,10 @@ Let's test it!
 
 ```R
 shapiro.test(wine$Ash)
-wilcox.test(x=wine$Ash[wine$Cultivar == "3"], y=wine$Ash[wine$Cultivar == "1"])
+wilcox.test(x=wine$Ash[wine$Cultivar == "2"], y=wine$Ash[wine$Cultivar == "3"])
 wilcox.test(x=wine$Ash[wine$Cultivar == "2"], y=wine$Ash[wine$Cultivar == "1"])
+
+# What about this one?
+wilcox.test(x=wine$Ash[wine$Cultivar == "3"], y=wine$Ash[wine$Cultivar == "1"])
+
 ```
-
-
