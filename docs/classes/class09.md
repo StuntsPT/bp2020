@@ -1,3 +1,15 @@
+### Class #9
+
+#### Bioinformática Prática 2018
+
+<img src="C01_assets/logo-FCUL.png" style="background:none; border:none; box-shadow:none;">
+
+<center>Francisco Pina Martins</center>
+
+<center>[@FPinaMartins](https://twitter.com/FPinaMartins)</center>
+
+---
+
 ## Automation & Reproducibility
 
 Automation <!-- .element: class="fragment" data-fragment-index="1" -->
@@ -78,6 +90,7 @@ if (x < 4) {
 } else {
     x = x + x
 }
+x
 ```
 
 |||
@@ -96,6 +109,7 @@ if (x < 4) {
 } else {
     x = x + x
 }
+x
 ```
 
 ---
@@ -176,9 +190,11 @@ for (i in c(3:5)){
 * Use a Version Control System (VCS) <!-- .element: class="fragment" data-fragment-index="2" -->
 	* Version control code, parameters and results <!-- .element: class="fragment" data-fragment-index="3" -->
 * Use automated code! <!-- .element: class="fragment" data-fragment-index="4" -->
-* Make the data available  <!-- .element: class="fragment" data-fragment-index="5" -->
+* Make the data/code available  <!-- .element: class="fragment" data-fragment-index="5" -->
 
-[Now is a good chance to show github](https://github.com/StuntsPT/BP2017) <!-- .element: class="fragment" data-fragment-index="6" -->
+[Now is a good chance to show github](https://github.com/StuntsPT/BP2018) <!-- .element: class="fragment" data-fragment-index="6" -->
+
+[Now is a good chance to show gitlab](https://gitlab.com/StuntsPT/bp2018) <!-- .element: class="fragment" data-fragment-index="6" -->
 
 ---
 
@@ -190,14 +206,14 @@ for (i in c(3:5)){
 
 ```R
 obs = c(5, 32)
-exp = c(9/10, 1/10)
+exp = c(1/10, 9/10)
 ```
 
 Vs.
 
 ```R
 obs = table(war_data$attacker_outcome)
-exp = c(9/10, 1/10)
+exp = c(1/10, 9/10)
 ```
 
 ---
@@ -324,5 +340,5 @@ sorteio = function(names_file, seed) {
     return(shuffled_names)
 }
 
-print(sorteio("https://raw.githubusercontent.com/StuntsPT/BP2017/master/classes/C09_assets/nomes.txt", 12345))
+print(sorteio("https://gitlab.com/StuntsPT/bp2018/raw/master/docs/classes/C01_assets/nomes.txt", 12345))
 ```
