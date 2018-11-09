@@ -1,12 +1,12 @@
-## Exercises 4 solutions
+## Exercises 9 solutions
 
 # 1.1
-value_double = function(x) {
+double_trouble = function(x) {
     return(x * 2)
 }
 
-print(value_double(9))
-print(value_double(6.5))
+print(double_trouble(9))
+print(double_trouble(6.5))
 
 # 1.2
 significance = function(p_value, alpha) {
@@ -69,7 +69,13 @@ print(looper(c("X1983", "X1992", "X1998", "X2003", "X2005"), 0.05))
 diatoms_data = read.csv(url("https://raw.githubusercontent.com/StuntsPT/BP2017/master/classes/C1_assets/Dados_diatoms_heavymetals.csv"), header=TRUE)
 
 diatoms_regression = function (x, y, file_name, xlab, ylab) {
-    cor_results = cor.test(x=x, y=y, methos="pearson", conf.level=0.95)
+    if (shapiro.test(x)$p.value < 0.05 | shapiro.test(y)$p.value < 0.05 ) {
+        corr_method = "spearman"
+    } else {corr_method = "pearson"
+
+    }
+    cor_results = cor.test(x=x, y=y, method=corr_method, conf.level=0.95)
+    regress = lm(y ~ x)
     png(filename=file_name)
     plot(x=x,
          y=y,
@@ -77,10 +83,10 @@ diatoms_regression = function (x, y, file_name, xlab, ylab) {
          ylab=ylab,
          xlab=xlab,
          main="Diatoms data scatterplot with regression line")
-    abline(lm(y ~ x), col="blue", lwd=3)
+    abline(regress, col="blue", lwd=3)
     dev.off()
 
-    return(c(cor_results$p.value, cor_results$estimate * cor_results$estimate))
+    return(c(cor_results$p.value, summary(regress)$r.squared))
 }
 
 print(diatoms_regression(diatoms_data$Zn, diatoms_data$Diversity, "~/corrplot1.png", ylab="Species diversity", xlab="Zn concentration"))
