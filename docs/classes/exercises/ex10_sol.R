@@ -8,7 +8,7 @@ cholesterol_plots = function(full_data, title, save_location) {
     years = names(full_data) = sub("^X", "", names(full_data))
     # Alternatively have an extra argument named "years" with a vector of years
 
-    png(filename=save_location)
+    png(filename=save_location, width=700, height=700)
     plot(x=years,
          y=mean_chol,
          type="l",
@@ -64,6 +64,7 @@ binom.test(x=obs[2], n=sum(obs), p=exp[2]/sum(exp), alternative="greater")
 # H0: The number of "Mimbulus mimbletoina" specimens in the greenhouse is not not significantly greater than what is expectd based on the records.
 # Since H0 is rejected, that means that the number of "Mimbulus mimbletoina" in the greenhouse is significnatly greater than what should be expected
 # and therefore it may be indicated as a possible cause for the incident.
+# Neville, we are all looking at you and yout plants...
 
 # 2.1
 malaria_corr = function(deaths, cases, save_path) {
@@ -88,12 +89,17 @@ malaria_corr = function(deaths, cases, save_path) {
 }
 
 malaria_cases = subset(malaria_cases, row.names(malaria_cases) %in% row.names(malaria_deaths))
-malaria_corr(deaths=as.matrix(malaria_deaths),
-             cases=as.matrix(malaria_cases),
-             save_path="~/malaria_corrplot.png")
+print(malaria_corr(deaths=as.matrix(malaria_deaths),
+                   cases=as.matrix(malaria_cases),
+                   save_path="~/malaria_corrplot.png"))
+
+# There is a correlation between the worldwide number of malaria cases & deaths
+# However, Spearman's "rho" is very low, which means the number of reported 
+# malaria cases is not a good predictor for the number of deaths.
 
 # 2.2
-# H0: When the number of malaria cases increases, the number of malaria deaths does not significantly increase or decrease
+# H0: When the number of malaria cases increases, the number of malaria deaths
+# does not significantly increase or decrease
 
 # 2.3
 # Done above
