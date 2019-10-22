@@ -1,6 +1,6 @@
 ### Class #2
 
-#### Bioinformática Prática 2018
+#### Bioinformática Prática 2019
 
 <img src="C01_assets/logo-FCUL.png" style="background:none; border:none; box-shadow:none;">
 

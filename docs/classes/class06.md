@@ -1,6 +1,6 @@
 ### Class #6
 
-#### Bioinformática Prática 2018
+#### Bioinformática Prática 2019
 
 <img src="C01_assets/logo-FCUL.png" style="background:none; border:none; box-shadow:none;">
 
@@ -450,7 +450,7 @@ Town                  State  Latitude  Species
 Data = read.table(textConnection(Input),header=TRUE)
 ```
 
-[Alternative](https://gitlab.com/StuntsPT/bp2018/raw/master/docs/classes/C06_assets/species_diversity.tsv)
+[Alternative](https://gitlab.com/StuntsPT/bp2019/raw/master/docs/classes/C06_assets/species_diversity.tsv)
 
 |||
 
