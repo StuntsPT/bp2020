@@ -1,6 +1,6 @@
 ### Class #1
 
-#### Bioinformática Prática 2018
+#### Bioinformática Prática 2019
 
 <img src="C01_assets/logo-FCUL.png" style="background:none; border:none; box-shadow:none;">
 
@@ -12,36 +12,37 @@
 
 ## Programa
 
-1ª semana
+**1ª semana**
 
-* 29-10-2018 – Introdução à cadeira; organização e tratamento de dados
-* 30-10-2018 – Introdução ao R
-* 31-10-2018 – Revisão de conceitos (14-16h) - Seminário
-* 02-11-2018 – Gráficos em R; erro; p-values
-
-|||
-
-## Programa
-
-2ª semana
-
-* 05-11-2018 – Testes de hipóteses
-* 06-11-2018 – Testes de hipóteses II
-* 07-11-2018 – **Journal Club**; desenho experimental
-* 09-11-2018 – Análise exploratória
-* 10-11-2018 – Automatização e reprodutibilidade
+* 28-10-2019 – Introdução à disciplina; organização e tratamento de dados
+* 29-10-2019 – Introdução ao R
+* 30-10-2019 – Revisão de conceitos (14-16h)
+* 31-10-2019 – Gráficos em R; erro; *p*-values
+* 01-11-2019 - **Feriado**
 
 |||
 
 ## Programa
 
-3ª semana
+**2ª semana**
 
-* 12-11-2018 – Revisões (14h-16h) - Seminário
-* 13-11-2018 – **Apresentações**
-* 14-11-2018 – **Apresentações**
-* 15-11-2018 – Exercícios
-* 16-11-2018 – **Exame TP**
+* 04-11-2019 – Testes de hipóteses
+* 05-11-2019 – Testes de hipóteses II
+* 06-11-2019 – **Journal Club** (14-16h) - Seminário
+* 07-11-2019 – Análise exploratória
+* 08-11-2019 – Automatização e reprodutibilidade
+
+|||
+
+## Programa
+
+**3ª semana**
+
+* 11-11-2019 – Revisões (14h-16h) - Seminário
+* 12-11-2019 – **Apresentações**
+* 13-11-2019 – **Apresentações**
+* 14-11-2019 – Exercícios
+* 15-11-2019 – **Exame TP**
 
 ---
 
@@ -74,7 +75,7 @@
 
 ## Journal club
 
-* Discussão de 1 artigo científico <!-- .element: class="fragment" data-fragment-index="1" -->
+* Discussão de um artigo científico <!-- .element: class="fragment" data-fragment-index="1" -->
 
 |||
 
@@ -107,5 +108,5 @@ sorteio = function(names_file, seed) {
     return(shuffled_names)
 }
 
-print(sorteio("https://gitlab.com/StuntsPT/bp2018/raw/master/docs/classes/C01_assets/nomes.txt", 12345))
+print(sorteio("https://gitlab.com/StuntsPT/bp2019/raw/master/docs/classes/C01_assets/nomes.txt", 12345))
 ```
