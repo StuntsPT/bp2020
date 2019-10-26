@@ -16,8 +16,8 @@
 
 * 28-10-2019 – Introdução à disciplina; organização e tratamento de dados
 * 29-10-2019 – Introdução ao R
-* 30-10-2019 – Gráficos em R
-* 31-10-2019 – Revisão de conceitos; erro; *p*-values; distribuições
+* 30-10-2019 – Revisão de conceitos (*Ciências Research Day*)
+* 31-10-2019 – Gráficos em R
 * 01-11-2019 - **Feriado**
 
 |||
@@ -59,7 +59,7 @@
 
 * Baseado nos exercícios feitos ao longo da disciplina <!-- .element: class="fragment" data-fragment-index="1" -->
 * Com consulta <!-- .element: class="fragment" data-fragment-index="2" -->
-* Todo feito no PC <!-- .element: class="fragment" data-fragment-index="3" -->
+* 100% digital <!-- .element: class="fragment" data-fragment-index="3" -->
 
 |||
 
