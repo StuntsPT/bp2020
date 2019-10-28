@@ -218,6 +218,7 @@ mtcars[1, 2]  # Indexing
 mtcars["Mazda RX4", "cyl"]  # Named indexing!
 
 mtcars[[9]]  # Get column 9
+mtcars[,9]  # Also get column 9
 mtcars[["am"]]  # Get column "am"
 mtcars$am  # Alternative - notice the lack of quotes
 mtcars[,"am"]  # Another alternative
