@@ -167,7 +167,7 @@ A **matrix** is a collection of **data elements** arranged in a **two-dimensiona
 ```R
 M = matrix(c(1, 2, 3, 4, 5, 6),  # data elements
            nrow=2,  # number of rows
-	   ncol=3)  # number of columns
+           ncol=3)  # number of columns
 M
 
 M[1,2]  # Bidimensional indexing!
