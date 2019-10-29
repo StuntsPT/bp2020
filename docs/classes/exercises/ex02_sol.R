@@ -9,21 +9,23 @@ rownames(scratch_df) = c("r1", "r2", "r3", "r4")
 
 diatoms_data = read.csv("../diatoms_data.csv", header=TRUE, row.names=2, sep=",")
 diatoms_data["CC1", "Species.richness"]
-diatoms_data[,"pH"]
+diatoms_data[,"Diversity"]
 diatoms_data["DC1",]
 diatoms_data[diatoms_data$River.name == "Snake River", ]
 
 ## 3. Online data
 
-pokedata = read.csv("https://gitlab.com/StuntsPT/bp2019/raw/master/docs/classes/exercises/poke_data.csv", header=TRUE, sep="\t")
+pokedata = read.csv("https://gitlab.com/StuntsPT/bp2019/raw/master/docs/classes/exercises/poke_data.csv", header=TRUE, sep="\t", row.names=2)
+
+min_hp = min(pokedata[,"HP"])
+min_hp_pokemon = row.names(pokedata[pokedata$HP == min_hp, ])
 
 max_hp = max(pokedata[,"HP"])
-
-max_hp_pokemon = pokedata[pokedata$HP == max_hp, ]$Name
+max_hp_pokemon = row.names(pokedata[pokedata$HP == max_hp, ])
 
 table(pokedata$Type.1)
 
-table(pokedata[pokedata$Generation == 1, ]$Type.1)
+table(pokedata[pokedata$Generation == 1, "Type.1"])
 
 
 water_type_pokemon = pokedata[pokedata$Type.1 == "Water" | pokedata$Type.2 == "Water", ]
