@@ -15,19 +15,25 @@ diatoms_data[diatoms_data$River.name == "Snake River", ]
 
 ## 3. Online data
 
+# 3.1
 pokedata = read.csv("https://gitlab.com/StuntsPT/bp2019/raw/master/docs/classes/exercises/poke_data.csv", header=TRUE, sep="\t", row.names=2)
 
+# 3.2
+View(pokedata)
+
+# 3.3
 min_hp = min(pokedata[,"HP"])
-min_hp_pokemon = row.names(pokedata[pokedata$HP == min_hp, ])
+min_hp_pokemon = row.names(pokedata[pokedata[, "HP"] == min_hp, ])
 
 max_hp = max(pokedata[,"HP"])
-max_hp_pokemon = row.names(pokedata[pokedata$HP == max_hp, ])
+max_hp_pokemon = row.names(pokedata[pokedata[, "HP"] == max_hp, ])
 
+# 3.4
 table(pokedata$Type.1)
 
-table(pokedata[pokedata$Generation == 1, "Type.1"])
+table(pokedata[pokedata$Generation == 1, "Type1"])
 
-
-water_type_pokemon = pokedata[pokedata$Type.1 == "Water" | pokedata$Type.2 == "Water", ]
-max_sp_attack = max(water_type_pokemon$Sp..Attack)
-max_sp_attack_water_pokemon = water_type_pokemon[water_type_pokemon$Sp..Attack == max_sp_attack, ]$Name
+# 3.5
+water_type_pokemon = pokedata[pokedata[,"Type1"] == "Water" | pokedata[,"Type2"] == "Water", ]
+max_sp_attack = max(water_type_pokemon[, "Sp.Attack"])
+max_sp_attack_water_pokemon = row.names(water_type_pokemon[water_type_pokemon[, "Sp.Attack"] == max_sp_attack, ])
