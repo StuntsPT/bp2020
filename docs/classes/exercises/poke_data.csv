@@ -1,4 +1,4 @@
-Number	Name	Type 1	Type 2	Total stats	HP	Attack	Defence	Sp. Attack	Sp. Defence	Speed	Generation	Legendary
+Number	Name	Type1	Type2	Total stats	HP	Attack	Defense	Sp.Attack	Sp.Defense	Speed	Generation	Legendary
 1	Bulbasaur	Grass	Poison	318	45	49	49	65	65	45	1	FALSE
 2	Ivysaur	Grass	Poison	405	60	62	63	80	80	60	1	FALSE
 3	Venusaur	Grass	Poison	525	80	82	83	100	100	80	1	FALSE
