@@ -29,7 +29,7 @@ max_hp = max(pokedata[,"HP"])
 max_hp_pokemon = row.names(pokedata[pokedata[, "HP"] == max_hp, ])
 
 # 3.4
-table(pokedata$Type.1)
+table(pokedata$Type1)
 
 table(pokedata[pokedata$Generation == 1, "Type1"])
 
