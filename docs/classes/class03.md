@@ -1,6 +1,6 @@
-### Class #3
+#### Class #3
 
-#### Bioinformática Prática 2019
+##### Bioinformática Prática 2019
 
 <img src="C01_assets/logo-FCUL.png" style="background:none; border:none; box-shadow:none;">
 
@@ -10,23 +10,23 @@
 
 ---
 
-## Statistical Concepts Revisited
+### Statistical Concepts Revisited
 
 ---
 
-## Variables
+### Variables
 
----
+|||
 
-## Continuous
+### Continuous
 
 * Can assume an infinite number of values (eg. length) <!-- .element: class="fragment" data-fragment-index="1" -->
 
 ![Cont variable](C03_assets/normal-distribution.png) <!-- .element: class="fragment" data-fragment-index="2" -->
 
----
+|||
 
-## Discrete
+### Discrete
  
 * Can assume a finite number of values (eg. number of beans) <!-- .element: class="fragment" data-fragment-index="1" -->
 
@@ -34,11 +34,11 @@
 
 ---
 
-## Measurement types
+### Measurement types
 
 |||
 
-## Nominal
+### Nominal
 
 ![Categorical variables](C03_assets/pokemon_bar.png)
 
@@ -46,7 +46,7 @@
 
 |||
 
-## Ordinal (ranked)
+### Ordinal (ranked)
 
 ![Ordinal variables](C03_assets/Stages-of-cancer.jpg)
 
@@ -54,7 +54,7 @@
 
 |||
 
-## Circular
+### Circular
 
 ![Circular variables](C03_assets/clock.jpg)
 
@@ -62,7 +62,7 @@
 
 |||
 
-## Ratios
+### Ratios
 
 ![Ratio variables](C03_assets/Male-female_ratios.png)
 
@@ -70,7 +70,7 @@
 
 ---
 
-## Dependent & independent variables
+### Dependent & independent variables
 
 <ul>
 <li class="fragment">Independent variables</li>
@@ -85,7 +85,7 @@
 
 |||
 
-## Which is which?
+### Which is which?
 
 ![Dendelion](C03_assets/Dandelion.jpg)
 
@@ -96,11 +96,11 @@
 
 ---
 
-## [Would you like to know more?](http://www.biostathandbook.com/variabletypes.html)
+### [Would you like to know more?](http://www.biostathandbook.com/variabletypes.html)
 
 ---
 
-## Accuracy & Precision
+### Accuracy & Precision
 
 ![ac & pre](C03_assets/acc_pre.png)
 
@@ -110,11 +110,11 @@
 
 ---
 
-## Populations & Samples
+### Populations & Samples
 
 ---
 
-## Population
+### Population
 
 ![DBZ_all](C03_assets/DBZ.jpg) <!-- .element: class="fragment" data-fragment-index="1" -->
 
@@ -122,7 +122,7 @@
 
 |||
 
-## Sample 
+### Sample 
 
 * Set of observations <!-- .element: class="fragment" data-fragment-index="1" -->
 
@@ -133,7 +133,7 @@
 
 |||
 
-## Parameters
+### Parameters
 
 ![DBZ_hair](C03_assets/DBZ_hair.png) <!-- .element: class="fragment" data-fragment-index="1" -->
 
@@ -141,7 +141,7 @@
 
 |||
 
-## Parameters
+### Parameters
 
 * Missing data
 
@@ -149,14 +149,14 @@
 
 ---
 
-## Descriptive statistics
+### Descriptive statistics
 
 * Central tendency <!-- .element: class="fragment" data-fragment-index="1" -->
 * Dispersal <!-- .element: class="fragment" data-fragment-index="2" -->
 
 ---
 
-## Central tendency
+### Central tendency
 
 * Mean - Average of all values <!-- .element: class="fragment" data-fragment-index="1" -->
   * Arithmetic <!-- .element: class="fragment" data-fragment-index="2" -->
@@ -168,13 +168,13 @@
 
 |||
 
-## Central tendency
+### Central tendency
 
 ![different_distributions](C03_assets/mean_median_mode.png)
 
 ---
 
-## Dispersal
+### Dispersal
 
 <ul>
 <li class="fragment">Range - Diff. between Max. and Min.</li>
@@ -187,7 +187,7 @@
 
 |||
 
-## Dispersal
+### Dispersal
 
 ![std. dev. image](C03_assets/Standard_deviation_diagram.png)
 
@@ -196,7 +196,7 @@
 
 ---
 
-## Reporting descriptive statistics
+### Reporting descriptive statistics
 
 * Use a central tendency measurement coupled with a dispersal measurement <!-- .element: class="fragment" data-fragment-index="1" -->
   * Mean + Std. Dev. <!-- .element: class="fragment" data-fragment-index="2" -->
@@ -208,13 +208,13 @@
 
 ---
 
-## Descriptive stats can be deceiving!
+### Descriptive stats can be deceiving!
 
 [![Anscombe's Quartet](C03_assets/Anscombe.png)](https://en.wikipedia.org/wiki/Anscombe%27s_quartet) <!-- .element: class="fragment" data-fragment-index="1" -->
 
 ---
 
-## Other descriptors
+### Other descriptors
 
 <img src="C03_assets/quantiles.png" style="background:none; border:none; box-shadow:none;">
 
@@ -228,59 +228,59 @@
 
 ---
 
-## Skewness & Kurtosis
+### Skewness & Kurtosis
 
 ![Skweness & Curtosis image](C03_assets/skewkurt.JPG) <!-- .element: class="fragment" data-fragment-index="1" -->
 
 ---
 
-## Distribution examples
+### Distribution examples
 
 ---
 
-## Normal
+### Normal
 
 ![Normal_dist](C03_assets/normal_distribution.png)
 
 |||
 
-## Exponential
+### Exponential
 
 ![Exp_dist](C03_assets/Exponential_dist.png)
 
 |||
 
-## Poisson
+### Poisson
 
 ![Poisson family](C03_assets/Poisson_dist.gif)
 
 |||
 
-## Lognormal
+### Lognormal
 
 ![lognormal](C03_assets/log-normal_distribution.png)
 
 |||
 
-## Beta
+### Beta
 
 ![beta_dist](C03_assets/beta_distribution.png)
 
 |||
 
-## Gamma
+### Gamma
 
 ![Gamma_dist](C03_assets/gamma-distribution.png)
 
 |||
 
-## "Paranormal distribution"
+### "Paranormal distribution"
 
 ![Paranormal dist](C03_assets/pranormal_distribution.jpg)
 
 ---
 
-## Data transformations
+### Data transformations
 
 * Logaritmic <!-- .element: class="fragment" data-fragment-index="1" -->
 * Square root <!-- .element: class="fragment" data-fragment-index="2" -->
@@ -289,4 +289,4 @@
 
 ---
 
-## That's it for today!
+### That's it for today!
