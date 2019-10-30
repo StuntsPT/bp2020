@@ -244,6 +244,12 @@
 
 |||
 
+### Gaussian
+
+![Gaussian_dist](C03_assets/Gaussian_Distribution.png)
+
+|||
+
 ### Exponential
 
 ![Exp_dist](C03_assets/Exponential_dist.png)
