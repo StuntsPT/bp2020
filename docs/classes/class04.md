@@ -1,6 +1,6 @@
-### Class #4
+#### Class #4
 
-#### Bioinformática Prática 2019
+##### Bioinformática Prática 2019
 
 <img src="C01_assets/logo-FCUL.png" style="background:none; border:none; box-shadow:none;">
 
@@ -10,11 +10,11 @@
 
 ---
 
-## Plotting
+### Plotting
 
 ---
 
-## How does it work?
+### How does it work?
 
 <ul>
 <li class="fragment">Plotting in R uses a function called `plot()`</li>
@@ -27,7 +27,7 @@
 
 ---
 
-## Rules of engagement
+### Rules of engagement
 
 <ul>
 <li class="fragment">Lines with a `#` below are wither new, or changed</li>
@@ -44,7 +44,7 @@
 
 ---
 
-## A simple dot plot
+### A simple dot plot
 
 ```R
 charles = c(12, 11, 12, 12, 13)
@@ -56,7 +56,7 @@ plot(charles)
 
 |||
 
-## Add a line + Title
+### Add a line + Title
 
 ```R
 charles = c(12, 11, 12, 12, 13)
@@ -72,7 +72,7 @@ title(main="Students at the institute", col.main="#DAA520", font.main=8)
 
 |||
 
-## Add another class
+### Add another class
 
 ```R
 charles = c(12, 11, 12, 12, 13)
@@ -90,7 +90,7 @@ title(main="Students at the institute", col.main="#DAA520", font.main=8)
 
 |||
 
-## Automate the limits and label axes
+### Automate the limits and label axes
 
 ```R
 charles = c(12, 11, 12, 12, 13)
@@ -114,7 +114,7 @@ title(ylab="Students", col.lab="darkgreen")
 
 |||
 
-## Cleanup
+### Cleanup
 
 ```R
 charles = c(12, 11, 12, 12, 13)
@@ -134,7 +134,7 @@ title(ylab="Students", col.lab="darkgreen")
 
 |||
 
-## Adding a legend
+### Adding a legend
 
 ```R
 charles = c(12, 11, 12, 12, 13)
@@ -160,7 +160,7 @@ legend(1, st_range[2], c("charles","scott"),
 
 |||
 
-## New axes
+### New axes
 
 ```R
 charles = c(12, 11, 12, 12, 13)
@@ -192,7 +192,7 @@ legend(1, st_range[2], c("charles","scott"),
 
 |||
 
-## Getting data from an external file
+### Getting data from an external file
 
 ```R
 classes_data = read.csv("https://gitlab.com/StuntsPT/bp2019/raw/master/docs/classes/C04_assets/classes_data.txt", header=TRUE, sep="\t")
@@ -235,7 +235,7 @@ legend(1, max_y, names(classes_data), cex=0.8, col=plot_colors,
 
 |||
 
-## "Saving the plot"
+### "Saving the plot"
 
 ```R
 classes_data = read.csv("https://gitlab.com/StuntsPT/bp2019/raw/master/docs/classes/C04_assets/classes_data.txt", header=TRUE, sep="\t")
@@ -275,7 +275,7 @@ dev.off()
 
 ---
 
-## Summary
+### Summary
 
 <ul>
  <li class⁼"fragment">`plot()` will start a new plot in R</li>
@@ -291,13 +291,13 @@ dev.off()
 
 ---
 
-## Phew!
+### Phew!
 
 ![It's over](C04_assets/done.gif)
 
 ---
 
-## Bar plots
+### Bar plots
 
 <ul>
 <li class="fragment">Bar plots are great for frequency data</li>
@@ -307,7 +307,7 @@ dev.off()
 
 |||
 
-## Bar plot basics
+### Bar plot basics
 
 ```R
 classes_data = read.csv("https://gitlab.com/StuntsPT/bp2019/raw/master/docs/classes/C04_assets/classes_data.txt", header=TRUE, sep="\t")
@@ -320,7 +320,7 @@ barplot(classes_data$Charles)
 
 |||
 
-### "Side by side"
+#### "Side by side"
 
 ```R
 classes_data = read.csv("https://gitlab.com/StuntsPT/bp2019/raw/master/docs/classes/C04_assets/classes_data.txt", header=TRUE, sep="\t")
@@ -339,7 +339,7 @@ legend("topleft", c("Mon","Tue","Wed","Thu","Fri"), cex=0.6,
 
 |||
 
-## Focus on weekdays
+### Focus on weekdays
 
 ```R
 classes_data = read.csv("https://gitlab.com/StuntsPT/bp2019/raw/master/docs/classes/C04_assets/classes_data.txt", header=TRUE, sep="\t")
@@ -358,7 +358,7 @@ legend("topleft", names(classes_data), cex=0.8, fill=heat.colors(3))
 
 |||
 
-## How can we improve the legend?
+### How can we improve the legend?
 
 ```R
 classes_data = read.csv("https://gitlab.com/StuntsPT/bp2019/raw/master/docs/classes/C04_assets/classes_data.txt", header=TRUE, sep="\t")
@@ -375,9 +375,13 @@ legend(6, 30, names(classes_data), cex=0.8, fill=heat.colors(3))
 # of our plot
 ```
 
+|||
+
+#### Something still bothers me...
+
 ---
 
-## Summary
+### Summary
 
 <ul>
  <li class⁼"fragment">`barplot()` will draw a barplot</li>
@@ -387,7 +391,7 @@ legend(6, 30, names(classes_data), cex=0.8, fill=heat.colors(3))
 
 ---
 
-## What about that `par` thing?
+### What about that `par` thing?
 
 <ul>
  <li class⁼"fragment">`par()` contains the plotting parameters</li>
@@ -406,7 +410,7 @@ legend(6, 30, names(classes_data), cex=0.8, fill=heat.colors(3))
 
 |||
 
-## Using `par()`
+### Using `par()`
 
 ```R
 classes_data = read.csv("https://gitlab.com/StuntsPT/bp2019/raw/master/docs/classes/C04_assets/classes_data.txt", header=TRUE, sep="\t")
@@ -424,13 +428,13 @@ barplot(as.matrix(classes_data), main="Institute", ylab= "Total Students",
 
 ---
 
-## Getting there
+### Getting there
 
 ![Burn](C04_assets/burns.gif)
 
 ---
 
-## Pie charts
+### Pie charts
 
 <ul>
  <li class⁼"fragment">`pie()` will plot a pie chart</li>
@@ -442,13 +446,13 @@ barplot(as.matrix(classes_data), main="Institute", ylab= "Total Students",
 
 |||
 
-## Pie charts
+### Pie charts
 
 ![have fun](C04_assets/have_fun.gif)
 
 ---
 
-## Histograms
+### Histograms
 
 <ul>
  <li class⁼"fragment">`hist()` will plot an histogram</li>
@@ -461,7 +465,7 @@ barplot(as.matrix(classes_data), main="Institute", ylab= "Total Students",
 
 |||
 
-## Basic histogram
+### Basic histogram
 
 ```R
 classes_data = read.csv("https://gitlab.com/StuntsPT/bp2019/raw/master/docs/classes/C04_assets/classes_data.txt", header=TRUE, sep="\t")
@@ -471,7 +475,7 @@ hist(classes_data$Charles)
 
 |||
 
-## Adding more data
+### Adding more data
 
 ```R
 classes_data = read.csv("https://gitlab.com/StuntsPT/bp2019/raw/master/docs/classes/C04_assets/classes_data.txt", header=TRUE, sep="\t")
@@ -487,7 +491,7 @@ hist(all_classes, col="gold")
 
 |||
 
-## Controlling the bins
+### Controlling the bins
 
 ```R
 classes_data = read.csv("https://gitlab.com/StuntsPT/bp2019/raw/master/docs/classes/C04_assets/classes_data.txt", header=TRUE, sep="\t")
@@ -507,7 +511,7 @@ hist(all_classes, col="gold", breaks=max_num,
 
 |||
 
-## Even more control!
+### Even more control!
 
 ```R
 classes_data = read.csv("https://gitlab.com/StuntsPT/bp2019/raw/master/docs/classes/C04_assets/classes_data.txt", header=TRUE, sep="\t")
@@ -530,7 +534,7 @@ hist(all_classes, col=heat.colors(length(brk)), breaks=brk,
 
 ---
 
-## Summary
+### Summary
 
 <ul>
  <li class⁼"fragment">Histograms are very much like other plots</li>
@@ -540,13 +544,13 @@ hist(all_classes, col=heat.colors(length(brk)), breaks=brk,
 
 ---
 
-## Why?
+### Why?
 
 ![scott](C04_assets/scott.gif)
 
 ---
 
-## Distribution sampling
+### Distribution sampling
 
 <ul>
  <li class⁼"fragment">We can use R to sample known distributions</li>
@@ -561,7 +565,7 @@ hist(samples, col="lightblue", freq=F)
 
 ---
 
-## Almost forgot!
+### Almost forgot!
 
 ```R
 rdm0 = rnorm(100)
@@ -576,7 +580,7 @@ boxplot(rdm0, rdm1, rdm2, rdm3, col="brown")
 
 |||
 
-## Boxplots can be more complex
+### Boxplots can be more complex
 
 ```R
 boxplot(mpg~cyl, data=mtcars, notch=TRUE,
@@ -588,5 +592,5 @@ boxplot(mpg~cyl, data=mtcars, notch=TRUE,
 
 ---
 
-## Finally
+### Finally
 
