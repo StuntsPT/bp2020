@@ -152,7 +152,7 @@ title(ylab="Students", col.lab="darkgreen")
 
 legend(1, st_range[2], c("charles","scott"),
        cex=0.8, 
-              col=c("gray","red"), pch=4:22, lty=1:2);
+              col=c("gray","red"), pch=4:22, lty=1:2)
 	      # Adds a legend. What are the first 2 arguments?
 	      # What does "cex" do?
 	      # Check the "pch" numbers too
@@ -225,7 +225,7 @@ title(xlab="Days", col.lab="darkgreen")
 title(ylab="Students", col.lab="darkgreen")
 
 legend(1, max_y, names(classes_data), cex=0.8, col=plot_colors, 
-       pch=c(4, 22, 14), lty=c(1,2,6));
+       pch=c(4, 22, 14), lty=c(1,2,6))
 # The code to set the legend is also changed. can you tell why?
 # Maybe now it should be placed somewhere else...
 
@@ -266,7 +266,7 @@ title(xlab="Days", col.lab="darkgreen")
 title(ylab="Students", col.lab="darkgreen")
 
 legend(1, max_y, names(classes_data), cex=0.8, col=plot_colors, 
-       pch=c(4, 22, 14), lty=c(1,2,6));
+       pch=c(4, 22, 14), lty=c(1,2,6))
 
 dev.off()
 # Now that our plot is complete, we just have to 
@@ -331,7 +331,7 @@ barplot(as.matrix(classes_data), main="Institute", ylab= "Total Students",
 # And add some colour too!
 
 legend("topleft", c("Mon","Tue","Wed","Thu","Fri"), cex=0.6, 
-       bty="n", fill=rainbow(5));
+       bty="n", fill=rainbow(5))
 # Let's also add a (small) Legend, but let's remove the border this time.
 # Check the "bty" option documentation!
 # Check the "rainbow" function too!
@@ -352,7 +352,7 @@ barplot(t(classes_data), main="Institute", ylab="Total Students",
 # Add 10% space between each bar ("spcace" argument)
 # Decrease the size of labels, just because we can
 
-legend("topleft", names(classes_data), cex=0.8, fill=heat.colors(3));
+legend("topleft", names(classes_data), cex=0.8, fill=heat.colors(3))
 # We now add the legend. But it's not looking so good now. Is it?
 ```
 
@@ -370,7 +370,7 @@ barplot(t(classes_data), main="Institute", ylab="Total Students",
         col=heat.colors(3), space=0.1, cex.axis=0.8, las=1,
         names.arg=c("Mon","Tue","Wed","Thu","Fri"), cex=0.8) 
 
-legend(6, 30, names(classes_data), cex=0.8, fill=heat.colors(3));
+legend(6, 30, names(classes_data), cex=0.8, fill=heat.colors(3))
 # Now we can set the figure to somewhere it won't cover any parts
 # of our plot
 ```
