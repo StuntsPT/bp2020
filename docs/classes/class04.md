@@ -175,7 +175,7 @@ axis(1, at=1:5, lab=c("Mon","Tue","Wed","Thu","Fri"))
 # Adds an X axis (1).
 # What do "at" and "lab" do?
 
-axis(2, at=4*0:st_range[2])
+axis(2, at=3*0:st_range[2])
 # Adds an Y axis (2)
 # Take a better look at "at" 
 
@@ -209,7 +209,7 @@ plot(classes_data$Charles, type="o", col=plot_colors[1], pch="x",
 # We also have to adjust our plotting function
 
 axis(1, at=1:5, lab=c("Mon","Tue","Wed","Thu","Fri"))
-axis(2, at=4*0:max_y)
+axis(2, at=3*0:max_y)
 # We also had to change the Y-axis to use the new variable
 
 lines(classes_data$Scott, type="o", pch=22, lty=2,
@@ -252,7 +252,7 @@ plot(classes_data$Charles, type="o", col=plot_colors[1], pch="x",
      ylim=c(0,max_y), axes=FALSE, ann=FALSE)
 
 axis(1, at=1:5, lab=c("Mon","Tue","Wed","Thu","Fri"))
-axis(2, at=4*0:max_y)
+axis(2, at=3*0:max_y)
 
 lines(classes_data$Scott, type="o", pch=22, lty=2,
       col=plot_colors[2])
