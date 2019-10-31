@@ -377,7 +377,22 @@ legend(6, 30, names(classes_data), cex=0.8, fill=heat.colors(3))
 
 |||
 
-#### Something still bothers me...
+### Something still bothers me...
+
+```R
+classes_data = read.csv("https://gitlab.com/StuntsPT/bp2019/raw/master/docs/classes/C04_assets/classes_data.txt", header=TRUE, sep="\t")
+
+par(xpd=T, mar=par()$mar+c(0,0,0,4))
+
+barplot(t(classes_data), main="Institute", ylab="Total Students", 
+        col=heat.colors(3), space=0.1, cex.axis=0.8, las=1,
+        names.arg=c("Mon","Tue","Wed","Thu","Fri"), cex=0.8,
+	ylim=c(0,30))
+# We now added a `ylim` parameter to our plot. This will make sure
+# the y axis does not end before the data
+
+legend(6, 30, names(classes_data), cex=0.8, fill=heat.colors(3))
+```
 
 ---
 
