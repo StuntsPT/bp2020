@@ -14,9 +14,9 @@ min_f_y = min(pt_f_values)
 
 png(filename="/home/francisco/Bp_w_PT.png", height=900, width=900)  # The file path is set for *nix based operating systems
 
-plot(pt_f_values, type="l", main="Blood pressure PT women 1985-2005", axes=FALSE, xlab="Years", ylab="Blood Pressure (mmHg)", ylim=c(min_f_y,max_f_y))
+plot(pt_f_values, type="l", main="Blood pressure PT women 1985-2005", axes=FALSE, xlab="Years", ylab="Blood Pressure (mmHg)", ylim=c(floor(min_f_y), ceiling(max_f_y)))
 axis(1, at=1:length(colnames(bp_f_1985_2005)), lab=colnames(bp_f_1985_2005))
-axis(2, at=min_f_y:(max_f_y + 1))  # The +1 ensures everything is within the Y limits
+axis(2, at=floor(min_f_y):ceiling((max_f_y + 1)), las=1)  # The +1 ensures everything is within the Y limits
 
 def.off()
 
@@ -30,10 +30,10 @@ min_y = min(c(pt_f_values, pt_m_values))
 
 png(filename="/home/francisco/Bp_wm_PT.png", height=900, width=900) 
 
-plot(pt_f_values, type="l", main="Blood pressure PT 1980-2008", axes=FALSE, xlab="Years", ylab="Blood Pressure (mmHg)", col="violet", ylim=c(min_y,max_y), lwd=4)
+plot(pt_f_values, type="l", main="Blood pressure PT 1980-2008", axes=FALSE, xlab="Years", ylab="Blood Pressure (mmHg)", col="violet", ylim=c(floor(min_y), ceiling(max_y)), lwd=4)
 lines(pt_m_values, type="l", col="cyan", lwd=4)
 axis(1, at=1:length(colnames(bp_f)), lab=colnames(bp_f))
-axis(2, at=min_y:(max_y + 1))
+axis(2, at=floor(min_y):(ceiling(max_y) + 1), las=1)
 
 legend("topright", c("Women", "Men"),
        cex=0.8,
@@ -52,13 +52,13 @@ y_range = range(pt_f_values, pt_m_values, es_f_values, es_m_values)
 
 png(filename="/home/francisco/Bp_wm_PT_vs_ES.png", height=900, width=900)
 
-plot(pt_f_values, type="l", main="Blood pressure PT 1980-2008", axes=FALSE, xlab="Years", ylab="Blood Pressure (mmHg)", col="forestgreen", ylim=y_range, lwd=4)
+plot(pt_f_values, type="l", main="Blood pressure PT 1980-2008", axes=FALSE, xlab="Years", ylab="Blood Pressure (mmHg)", col="forestgreen", ylim=c(floor(y_range[1] - 1),ceiling(y_range[2])), lwd=4)
 lines(pt_m_values, type="l", col="forestgreen", lwd=4, lty=2)
 lines(es_f_values, type="l", col="yellow", lwd=4, lty=1)
 lines(es_m_values, type="l", col="yellow", lwd=4, lty=2)
 
 axis(1, at=1:length(colnames(bp_f)), lab=colnames(bp_f))
-axis(2, at=y_range[1]:y_range[2] + 0.3)
+axis(2, at=floor(y_range[1] - 1):ceiling(y_range[2]) + 1, las=1)
 
 legend("topright", c("PT ♀", "PT ♂ ", "ES ♀", "ES ♂ "),
        cex=0.8,
@@ -80,7 +80,8 @@ par(mfrow=c(1,2), xpd=T, mar=par()$mar+c(0,0,0,4))
 
 barplot(as.matrix(male_subset), main="♂ blood pressure levels",
         col=country_colours, beside=TRUE, xlab="Years",
-        ylab="Blood pressure  (mmHg)")
+        ylab="Blood pressure  (mmHg)", las=1,
+        ylim=c(0, max(male_subset) + max(male_subset, female_subset) * 0.1))
 
 legend(15.5, 120, c("China", "Canada", "Finland", "Greece"),
        cex=1,
@@ -88,7 +89,8 @@ legend(15.5, 120, c("China", "Canada", "Finland", "Greece"),
 
 barplot(as.matrix(female_subset), main="♀ blood pressure levels",
         col=country_colours, beside=TRUE, xlab="Years",
-        ylab="Blood pressure  (mmHg)")
+        ylab="Blood pressure  (mmHg)", las=1,
+        ylim=c(0, max(male_subset, female_subset) * 1.1))
 
 dev.off()
 
@@ -100,21 +102,22 @@ max_hp = as.numeric(max(pokedata$HP))
 
 png(filename="/home/francisco/HP_hist.png", height=1000, width=1000)
 
-hist(pokedata$HP, xlab="HP", main="Histogram of Pokemon HP", col="red", axes=FALSE)
+hist(pokedata$HP, xlab="HP", main="Histogram of Pokemon HP", col="red", axes=FALSE, ylim=c(0,300), las=1)
 axis(1, at=seq(0, max_hp + 5, by=20))
-axis(2)
+axis(2, at=seq(0, 300, 30))
 
 dev.off()
 
-max_sp_def = max(pokedata$Sp..Defence)
+max_sp_def = max(pokedata$Sp.Defense)
 
 png(filename="/home/francisco/Sp.def_hist.png", height=1000, width=1000)
 
-hist(pokedata$Sp..Defence, xlab="Special Defence",
-     main="Histogram of Pokemon Sp. Defence",
+hist(pokedata$Sp.Defense, xlab="Special Defense",
+     main="Histogram of Pokemon Sp. Defense",
      col="gold", axes=FALSE,
      xlim=c(0, max_sp_def + 50),
-     ylim=c(0,250))
+     ylim=c(0,250),
+     las=1)
 axis(1, at=seq(0, max_sp_def + 50, by=20))
 axis(2, at=seq(0, 250, by=50))
 
@@ -128,42 +131,48 @@ hist(pokedata$Speed, xlab="Speed",
      main="Histogram of Pokemon Speed",
      col="orange",
      xlim=c(0, max_speed + 50),
-     ylim=c(0,250))
+     ylim=c(0,250),
+     las=1)
 
 dev.off()
 
 # 2.
 
-png(filename="/home/francisco/HP_vs_Defence.png", height=1000, width=1200)
+png(filename="/home/francisco/HP_vs_Defense.png", height=1000, width=1200)
 
-plot(x=pokedata$HP, y=pokedata$Defence, pch="x", col="blue", xlab="HP",
-     ylab="Defence", main="Pokemon HP Vs. Defence")
+plot(x=pokedata$Sp.Defense, y=pokedata$Defense, pch="x", col="blue", xlab="Sp. Defense",
+     ylab="Defence", main="Pokemon Special Defense Vs. Defense",
+     las=1)
 
 dev.off()
 
 png(filename="/home/francisco/HP_vs_Sp_Defence.png", height=1000, width=1200)
 
-plot(x=pokedata$HP, y=pokedata$Sp..Defence, pch="x", col="darkgreen", xlab="HP",
-     ylab="Special Defence", main="Pokemon HP Vs. Special Defence")
+plot(x=pokedata$Sp.Attack, y=pokedata$Attack, pch="x", col="darkgreen", xlab="Sp. Attack",
+     ylab="Attack", main="Pokemon Special Attack Vs. Attack",
+     las=1)
 
 dev.off()
 
 # 3.
 
-fire_sp_attack = pokedata[pokedata$Type.1 == "Fire" | pokedata$Type.2 == "Fire", "Sp..Attack"]
-water_sp_attack = pokedata[pokedata$Type.1 == "Water" | pokedata$Type.2 == "Water", "Sp..Attack"]
-electric_sp_attack = pokedata[pokedata$Type.1 == "Electric" | pokedata$Type.2 == "Electric", "Sp..Attack"]
-ice_sp_attack = pokedata[pokedata$Type.1 == "Ice" | pokedata$Type.2 == "Ice", "Sp..Attack"]
-grass_sp_attack = pokedata[pokedata$Type.1 == "Grass" | pokedata$Type.2 == "Grass", "Sp..Attack"]
+fire_sp_attack = pokedata[pokedata$Type1 == "Fire" | pokedata$Type2 == "Fire", "Sp.Attack"]
+water_sp_attack = pokedata[pokedata$Type1 == "Water" | pokedata$Type2 == "Water", "Sp.Attack"]
+electric_sp_attack = pokedata[pokedata$Type1 == "Electric" | pokedata$Type2 == "Electric", "Sp.Attack"]
+ice_sp_attack = pokedata[pokedata$Type1 == "Ice" | pokedata$Type2 == "Ice", "Sp.Attack"]
+grass_sp_attack = pokedata[pokedata$Type1 == "Grass" | pokedata$Type2 == "Grass", "Sp.Attack"]
 
 png(filename="/home/francisco/Sp.Attack_by_type.png", height=1000, width=1200)
 
 boxplot(fire_sp_attack, water_sp_attack, electric_sp_attack, ice_sp_attack, grass_sp_attack,
         ylab="Sp. Attack", xlab="Pokemon type",
         col=c("red", "lightblue", "gold", "white", "forestgreen"),
-        main="Pokemon Sp. Attack by type", axes=FALSE, notch=TRUE)
+        main="Pokemon Sp. Attack by type", axes=FALSE, notch=TRUE,
+        ylim=c(0,max(fire_sp_attack, water_sp_attack, electric_sp_attack, ice_sp_attack, grass_sp_attack)))
 axis(1, at=1:5, labels=c("Fire", "Water", "Electric", "Ice", "Grass"))
-axis(2, at=seq(0, max(fire_sp_attack, water_sp_attack, electric_sp_attack, ice_sp_attack, grass_sp_attack), by=20))
+axis(2,
+     at=seq(0, max(fire_sp_attack, water_sp_attack, electric_sp_attack, ice_sp_attack, grass_sp_attack), by=20),
+     las=1)
 box()
 
 dev.off()
