@@ -197,6 +197,10 @@ diatoms = read.csv(url("https://gitlab.com/StuntsPT/bp2019/raw/master/docs/class
 north_rivers_doxy = diatoms$Doxy[diatoms$Stream == "ER" | diatoms$Stream == "BR" | diatoms$Stream == "SR"]
 south_rivers_doxy = diatoms$Doxy[diatoms$Stream == "AR" | diatoms$Stream == "CC" | diatoms$Stream == "SPR"]
 
+# Alternative:
+north_rivers_doxy = diatoms[diatoms[, "Stream"] == "ER" | diatoms[, "Stream"] == "BR" | diatoms[, "Stream"] == "SR", "Doxy"]
+south_rivers_doxy = diatoms[diatoms[, "Stream"] == "AR" | diatoms[, "Stream"] == "CC" | diatoms[, "Stream"] == "SPR", "Doxy"]
+
 shapiro.test(north_rivers_doxy)
 shapiro.test(south_rivers_doxy)
 
