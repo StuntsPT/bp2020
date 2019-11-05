@@ -3,32 +3,34 @@
 magic_beans = read.csv(url("https://gitlab.com/StuntsPT/bp2019/raw/master/docs/classes/exercises/Magic_beans.csv"), header=TRUE, row.names=1)
 
 # Size category
-size_category_counts = data.frame(table(magic_beans$Size.category))
+size_category_counts = data.frame(table(magic_beans[, "Size.category"]))
 
-barplot(height=size_category_counts$Freq,
-        width=c(3,2,1),
-        names.arg=size_category_counts$Var1,
+barplot(height=size_category_counts[, "Freq"],
+        width=c(3, 2, 1),
+        names.arg=size_category_counts[, "Var1"],
         col="red",
         ylab="Magic beans",
         xlab="Size category",
-        main="Magic bean counts per size category")
+        main="Magic bean counts per size category",
+        axes=FALSE)
+axis(2, at=round(seq(0, max(size_category_counts$Freq), length.out = 6),0), las=1)
 
 # Colours
-colour_counts = data.frame(table(magic_beans$Colour))
+colour_counts = data.frame(table(magic_beans[,"Colour"]))
 
-barplot(height=colour_counts$Freq,
+barplot(height=colour_counts[, "Freq"],
         width=1,
-        names.arg=colour_counts$Var1,
-        col=as.vector(colour_counts$Var1),
+        names.arg=colour_counts[, "Var1"],
+        col=as.vector(colour_counts[, "Var1"]),
         ylab="Magic beans",
         xlab="Colour category",
         main="Magic bean counts per colour",
-        ylim=c(0,400))
+        ylim=c(0, max(colour_counts[, "Freq"]) * 1.1))
 
 # Hypothesis tests
 # 2.1:
-colour_expectations = c(1/6,1/6,1/6,1/6,1/6,1/6)
-colour_observations = as.vector(colour_counts$Freq)
+colour_expectations = c(1/6, 1/6, 1/6, 1/6, 1/6 ,1/6)
+colour_observations = as.vector(colour_counts[, "Freq"])
 chisq.test(x=colour_observations, p=colour_expectations)
 
 # H0: The obsrved colour distribution is not different from the expectation of 1:1:1:1:1:1.
@@ -46,21 +48,29 @@ for (i in 1:length(colour_expectations)) {
     }
 
 q_values = p.adjust(p_vals, method="fdr")
-# According to the q-values, assuming alpha==0.05, only the green beans are not significantly different from the expected proportion.
+# According to the q-values, assuming alpha==0.05, only the green beans are not significantly different from the expected porportion.
 
 # 2.3
-library("XNomial")
-xmulti(obs=table(magic_beans$Size.category[magic_beans$Colour == "Red"]), expr=c(1,1,1))
+if (!require("XNomial")) {
+    install.packages("XNomial")
+    library("XNomial")
+}
+
+red_beans = table(magic_beans$Size.category[magic_beans$Colour == "Red"])
+# Alternative
+red_beans = table(magic_beans)["Red",]
+
+xmulti(obs=red_beans, expr=c(1/3,1/3,1/3))
 # The multinomial test indicates that the red beans' size categories are not significantly different from the expectation of 1:1:1
 
 # 2.4
-chisq.test(table(magic_beans))
+chisq.test(table(magic_beans), correct=TRUE)
 # H0: The bean colour does not influence the distribution of the size categories
 # The Chi² test does not reject H0, therefore independence between colour and size category prportions is assumed.
 
 # 2.5
-obs=c(89,322,16)
-exp=c(5/21,15/21,1/21)
+obs=c(89, 322, 16)
+exp=c(5/21, 15/21, 1/21)
 
 binom.test(x=obs[1], n=sum(obs), p=exp[1], alternative="greater")
 # The porportion of tie fighters found aboard the Imperial Star Destroyer are not significantly different from what is expected for a ground strike.
@@ -80,10 +90,16 @@ plot(x=faithful$eruptions,
 shapiro.test(faithful$waiting)
 shapiro.test(faithful$eruptions)
 cor.test(x=faithful$eruptions, y=faithful$waiting, method="spearman", conf.level=0.95)
-model = lm(faithful$waiting ~ faithful$eruptions)
+model = lm(waiting ~ eruptions, data=faithful)
 summary(model)
-# The R-squared value is of 0.8115 and the correlation is significant.
+# The R-squared value is of 0.8115 (0.8108 adjusted) and the correlation is significant.
 
 # 3.3
+intercept = model$coefficients["(Intercept)"]
+slope = model$coefficients["eruptions"]
+abline(intercept, slope, col="forestgreen", lwd=3)
+
+# Alternative
 abline(model, col="blue", lwd=3)
+
 
