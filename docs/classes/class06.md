@@ -536,8 +536,8 @@ Correlation & regression analyses
 
 ```R
 # Correlation
-cor.test(x=Data$Species,
-         y=Data$Latitude,
+cor.test(x=Data$Latitude,
+         y=Data$Species,
          method = "pearson",
          conf.level = 0.95)
 
