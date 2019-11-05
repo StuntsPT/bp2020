@@ -14,21 +14,46 @@
 
 ---
 
-### Multi category testing
+### Goodness of fit tests
 
-* When it is necessary to compare observation counts to a theoretical expectation
+* When can they be performed?
+* Why are they necessary?
+* Which tests are these?
+
+---
+
+### When can they be performed?
+
+<ul>
+<li class="fragment" data-fragment-index="1">When the data consists of:</li>
+  <ul>
+  <li class="fragment" data-fragment-index="2">Categorical variables</li>
+  <li class="fragment" data-fragment-index="2">Counts data</li>
+  </ul>
+</ul>
+
+---
+
+### Why are they necessary?
+
+* When comparing observation counts to an expectation
 * Examples: <!-- .element: class="fragment" data-fragment-index="1" -->
 	* Is our sample of male and female individuals representative of the population's sex ratio? <!-- .element: class="fragment" data-fragment-index="1" -->
 	* Are our counts of crossed flower colours matched to the expected Mendelian inheritance? <!-- .element: class="fragment" data-fragment-index="2" -->
 
+
 ---
 
-### ["High Hopes"](https://www.youtube.com/watch?v=7jMlFXouPk8)
+### What are they?
 
-* There are several way to test the conformance to expectations
-	* (Pearson's) Chi² test <!-- .element: class="fragment highlight-green" data-fragment-index="1" -->
-	* G-test <!-- .element: class="fragment fade-out" data-fragment-index="1" -->
-	* Exact test <!-- .element: class="fragment highlight-green" data-fragment-index="1" -->
+<ul>
+<li class="fragment" data-fragment-index="1">There are several ways to test the [conformance to expectations](https://www.youtube.com/watch?v=7jMlFXouPk8) (goodness of fit)</li>
+  <ul>
+  <li class="fragment" data-fragment-index="2"><span class="fragment highlight-green" data-fragment-index="3">(Pearson's) Chi² test</span></li>
+  <li class="fragment" data-fragment-index="2"><span class="fragment fade-out" data-fragment-index="3">G-test</span></li>
+  <li class="fragment" data-fragment-index="2"><span class="fragment highlight-green" data-fragment-index="3">Binomial/multinomial test</span></li>
+  </ul>
+</ul>
 
 ---
 
@@ -67,7 +92,7 @@ legend("topright", inset=.05, title="Distributions",
 
 ### The Null hypothesis
 
-"The number of observatons in each category are not different from the expectation" <!-- .element: class="fragment" data-fragment-index="1" -->
+"The number of observatons in each category is not different from the expectation" <!-- .element: class="fragment" data-fragment-index="1" -->
 
 ---
 
@@ -103,13 +128,17 @@ chisq.test(x=obs, p=exp)
 
 ### Multiple testing example
 
-* Suppose we have flowers where alleles determine colour <font color="red">AA</font>, <font color="pink">Aa</font>, <font color="white">aa</font>.
-	* F1 contains <font color="red">1300</font>, <font color="pink">3000</font>, <font color="white">1500</font>
-	* This trait has Mendelian inheritance <!-- .element: class="fragment" data-fragment-index="1" -->
-	* All F0 males are white <!-- .element: class="fragment" data-fragment-index="2" -->
-	* All F0 females are red <!-- .element: class="fragment" data-fragment-index="3" -->
+<ul>
+<li class="fragment">Suppose we have flowers where alleles determine colour <font color="red">AA</font>, <font color="pink">Aa</font>, <font color="white">aa</font>.</li>
+  <ul>
+  <li class="fragment">This trait has Mendelian inheritance</li>
+  <li class="fragment">All F0 males are white</li>
+  <li class="fragment">All F0 females are red</li>
+  <li class="fragment">F1 contains <font color="red">1300</font>, <font color="pink">3000</font>, <font color="white">1500</font></li>
+  </ul>
+</ul>
 
-Are these proportions according to the expectation of 1:2:1 ? <!-- .element: class="fragment" data-fragment-index="4" -->
+Are these proportions according to the expectation of 1:2:1 ? <!-- .element: class="fragment" -->
 
 |||
 
@@ -221,16 +250,50 @@ if(!require("XNomial")){
 
 ---
 
-### Multidimensional contingency tables
+### Independence tests
 
-* Tables in a matrix format
+* When can they be performed?
+* Why are they necessary?
+* Which tests are these?
+
+---
+
+### When can they be performed?
+
+<ul>
+<li class="fragment" data-fragment-index="1">When the data consists of:</li>
+  <ul>
+  <li class="fragment" data-fragment-index="2">Categorical variables</li>
+  <li class="fragment" data-fragment-index="2">Counts data</li>
+  <li class="fragment" data-fragment-index="2">Contingency tables</li>
+  </ul>
+</ul>
+
+---
+
+### Why are they necessary?
+
 * Each entry represents a variable frequency distribution <!-- .element: class="fragment" data-fragment-index="1" -->
 * Used to test whether the proportions of one variable are different for different values of the other variable <!-- .element: class="fragment" data-fragment-index="3" -->
 * Examples: <!-- .element: class="fragment" data-fragment-index="4" -->
-	* Are the class' grades different between male and female students? <!-- .element: class="fragment" data-fragment-index="4" -->
+	* Are a class' grades gender independent? <!-- .element: class="fragment" data-fragment-index="4" -->
 	* Are the side effects of a new drug more prone to occur if it is taken at night or in the morning? <!-- .element: class="fragment" data-fragment-index="5" -->
 
 ---
+
+### What are they?
+
+<ul>
+<li class="fragment" data-fragment-index="1">There are several ways to perform independence tests:</li>
+  <ul>
+  <li class="fragment" data-fragment-index="2"><span class="fragment highlight-green" data-fragment-index="3">Chi² test of independence</span></li>
+  <li class="fragment" data-fragment-index="2"><span class="fragment fade-out" data-fragment-index="3">G-test of independence</span></li>
+  <li class="fragment" data-fragment-index="2"><span class="fragment highlight-green" data-fragment-index="3">Fisher's exact test</span></li>
+  </ul>
+</ul>
+
+---
+
 
 ### Chi² test of independence
 
@@ -330,8 +393,7 @@ small_samples_matrix = as.matrix(read.table(textConnection(text_input),
                                  header=TRUE,
                                  row.names=1))
 
-fisher.test(small_samples_matrix,
-            alternative="two.sided")
+fisher.test(small_samples_matrix)
 ```
 
 ---
@@ -492,8 +554,8 @@ summary(model)
 Plot the regression line
 
 ```R
-int =  model$coefficient["(Intercept)"]
-slope =model$coefficient["Latitude"]
+intercept = model$coefficient["(Intercept)"]
+slope = model$coefficient["Latitude"]
 
 plot(Species ~ Latitude,
      data = Data,
@@ -501,7 +563,7 @@ plot(Species ~ Latitude,
      xlab = "Latitude",
      ylab = "Species")
 
-abline(int, slope,
+abline(intercept, slope,
        lty=1, lwd=2, col="blue")
 ```
 
