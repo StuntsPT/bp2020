@@ -1,4 +1,4 @@
-### Class #8
+### Class #7
 
 #### Bioinformática Prática 2019
 
