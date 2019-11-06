@@ -165,9 +165,9 @@ plot(hclust(dist(student_matrix),method="average"))
 
 ### When is a PCA useful?
 
-* If data simplification is required (reduce computational time)
+* If data simplification is required
 * If variables are highly correlated <!-- .element: class="fragment" data-fragment-index="1" -->
-* If dealing with 3 or higher dimensional data <!-- .element: class="fragment" data-fragment-index="2" -->
+* If dealing with 3 dimensional or higher data <!-- .element: class="fragment" data-fragment-index="2" -->
 
 ---
 
@@ -186,7 +186,7 @@ plot(hclust(dist(student_matrix),method="average"))
 
 ```R
 # Get some data
-wine <- read.table("http://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data", sep=",")
+wine <- read.csv("http://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data", sep=",")
 
 # Add column names
 colnames(wine) <- c("Cultivar", "Alcohol", "Malic acid", "Ash",
@@ -221,7 +221,7 @@ legend("bottomright", legend = c("Cv1","Cv2","Cv3"), pch = 1,
 <li class="fragment">It is possible to "import" thousands of external 3rd party packages</li>
 <li class="fragment">Bioconductor is more than just a package. It's a 3rd party package repository</li>
   <ul>
-  <li class="fragment">It hosts ~~1473~~ 1649 bioinformatics related packages (at the time of writing)</li>
+  <li class="fragment">It hosts ~~1473~~ ~~1649~~ 1823 bioinformatics related packages (at the time of writing)</li>
   <li class="fragment">It is very easy to use directly from R</li>
   </ul>
 </ul>
@@ -234,8 +234,8 @@ legend("bottomright", legend = c("Cv1","Cv2","Cv3"), pch = 1,
 * First we import the new package
 
 ```R
-source("https://bioconductor.org/biocLite.R")
-biocLite("pcaMethods")
+install.packages("BiocManager")
+BiocManager::install("pcaMethods")
 library(pcaMethods)
 ```
 
