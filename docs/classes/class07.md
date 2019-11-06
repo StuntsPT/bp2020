@@ -30,7 +30,7 @@
 * Objects in the same group are closer to each other than to objects in other groups <!-- .element: class="fragment" data-fragment-index="1" -->
 * It is not an algorithm, but rather a task (yes, it is that broad) <!-- .element: class="fragment" data-fragment-index="2" -->
 
-![clustering](C08_assets/UPGMA_Dendrogram_5S_data.png) <!-- .element: class="fragment" data-fragment-index="3" -->
+![clustering](C07_assets/UPGMA_Dendrogram_5S_data.png) <!-- .element: class="fragment" data-fragment-index="3" -->
 
 ---
 
@@ -62,7 +62,7 @@
 
 Euclidian distances!
 
-![Euclidian_dist](C08_assets/euclidian.png) 
+![Euclidian_dist](C07_assets/euclidian.png) 
 
 ```R
 euclidean_distance = function(p,q){
