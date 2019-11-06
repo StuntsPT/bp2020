@@ -1,20 +1,22 @@
 ## Exercises 3 solutions
 
 # 1.1
-war_data = read.csv(url("https://raw.githubusercontent.com/chrisalbon/war_of_the_five_kings_dataset/master/5kings_battles_v1.csv"), header=TRUE, row.names=1)[]
+war_data = read.csv(url("https://raw.githubusercontent.com/chrisalbon/war_of_the_five_kings_dataset/master/5kings_battles_v1.csv"), header=TRUE, row.names=1)
 
 # 1.2
-barplot(table(war_data$region),
+regional_battles = table(war_data$region)
+barplot(regional_battles,
         col="darkred",
         ylab="No. of Battles",
         xlab="Regions",
-        main="Locations of battles during the 'War of 5 Kings'")
+        main="Locations of battles during the 'War of 5 Kings'",
+        ylim=c(0, max(regional_battles) * 1.2 ))
+
 
 # 1.3
-
 outcomes = table(war_data$attacker_outcome)
 
-binom.test(x=outcomes[3], n=sum(outcomes[2:3]), p=9/10)
+binom.test(x=outcomes[3], n=sum(outcomes[2:3]), p=10/11)
 
 # H0: The ratio of attacking force victories during the 'War of 5 Kings' is not significantl different from the expected odds of 1:10
 # The binomial test does not reject H0.
@@ -37,8 +39,11 @@ plot(hclust(dist(mtcars)),
      xlab="Car models")
 
 # 2.3
-install.packages("cluster")
-library("cluster")
+if (!require("cluster")) {
+        install.packages("cluster")
+        library("cluster")
+}
+
 
 # 2.4
 View(plantTraits)
@@ -65,9 +70,13 @@ color_categories = SNP_full_data[,2]
 populations = SNP_full_data[,1]
 
 # 3.2
-source("https://bioconductor.org/biocLite.R")
-biocLite("pcaMethods")
-library(pcaMethods)
+if (!require("BiocManager")){
+        install.packages("BiocManager")        
+}
+if (!require("pcaMethods")){
+        BiocManager::install("pcaMethods")
+        library("pcaMethods")
+}
 
 snp_pca <- pca(just_snp_data, scale="none", center=TRUE, nPcs=2,
                method="nipals")
@@ -79,6 +88,8 @@ slplot(snp_pca,
        sl=NULL, spch=1)
 legend("bottomright", legend=unique(populations), col=unique(color_categories),
        pch=1)
+
+# No point looking at factor loadings when we have 2000 variables...
 
 # 3.3
 snp_pca@R2
