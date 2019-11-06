@@ -247,16 +247,17 @@ Next we calculate the PCA and plot it
 
 ```R
 # Calculate PCA
-winePCAmethods = pca(wine[,-1], scale="uv", center=TRUE, nPcs=2, method="svd")
+winePCAmethods = pca(wine[,-1], scale="vector", center=T, nPcs=2, method="svd")
 
 # Plot it
 slplot(winePCAmethods,
        scol=cultivar_classes,
        scoresLoadings=c(TRUE,FALSE))
+
 legend("bottomright", legend = c("Cv1","Cv2","Cv3"), pch = 1,
        col = c("black","red","green"))
+
 slplot(winePCAmethods,
-       scol=cultivar_classes,
        scoresLoadings=c(FALSE,TRUE))
 ```
 
