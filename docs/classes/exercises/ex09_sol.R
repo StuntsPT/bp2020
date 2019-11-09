@@ -71,7 +71,7 @@ diatoms_data = read.csv(url("https://raw.githubusercontent.com/StuntsPT/BP2017/m
 diatoms_regression = function (x, y, file_name, xlab, ylab) {
     if (shapiro.test(x)$p.value < 0.05 | shapiro.test(y)$p.value < 0.05 ) {
         corr_method = "spearman"
-    } else {corr_method = "pearson"
+    } else { corr_method = "pearson"
 
     }
     cor_results = cor.test(x=x, y=y, method=corr_method, conf.level=0.95)
