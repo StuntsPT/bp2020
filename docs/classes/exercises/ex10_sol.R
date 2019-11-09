@@ -4,6 +4,7 @@
 cholesterol_plots = function(full_data, title, save_location) {
     mean_chol = apply(full_data, 2, mean)
     median_chol = apply(full_data, 2, median)
+    cholrange = range(mean_chol, median_chol)
 
     years = names(full_data) = sub("^X", "", names(full_data))
     # Alternatively have an extra argument named "years" with a vector of years
@@ -16,12 +17,17 @@ cholesterol_plots = function(full_data, title, save_location) {
          lwd=2,
          main=title,
          ylab="Cholesterol concentration (mmol/L)",
-         xlab="Years")
+         xlab="Years",
+         ylim=cholrange,
+         axes=FALSE)
     lines(x=years,
           y=median_chol,
           type="l",
           col="blue",
           lwd=2)
+    axis(1, at=years, labels=years)
+    axis(2, las=1,
+         at=round(seq(cholrange[1] * 0.999, cholrange[2] * 1.001, length.out=5), 2))
     legend("topright",
            inset=.05,
            c("Mean", "Median"),
@@ -30,8 +36,8 @@ cholesterol_plots = function(full_data, title, save_location) {
 }
 
 # Data downloading
-male_chol = read.csv(url("http://docs.google.com/spreadsheet/pub?key=0ArfEDsV3bBwCdDU5SnRoQ0xlZWhwRUZ6RFNQV042enc&output=csv"), header=TRUE, row.names=1)
-female_chol = read.csv(url("http://docs.google.com/spreadsheet/pub?key=0ArfEDsV3bBwCdGJHcHZkSUdBcU56aS1OT3lLeU4tRHc&output=csv"), header=TRUE, row.names=1)
+male_chol = read.csv("http://docs.google.com/spreadsheet/pub?key=0ArfEDsV3bBwCdDU5SnRoQ0xlZWhwRUZ6RFNQV042enc&output=csv", header=TRUE, row.names=1)
+female_chol = read.csv("http://docs.google.com/spreadsheet/pub?key=0ArfEDsV3bBwCdGJHcHZkSUdBcU56aS1OT3lLeU4tRHc&output=csv", header=TRUE, row.names=1)
 
 # Male cholesterol plot
 cholesterol_plots(full_data=male_chol,
