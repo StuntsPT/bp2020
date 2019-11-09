@@ -50,8 +50,8 @@ cholesterol_plots(full_data=female_chol,
                   save_location="~/female_plot.png")
 
 # 1.2
-malaria_cases = read.csv(url("http://docs.google.com/spreadsheet/pub?key=pp59adS3CHWczfPHQMiqxCg&output=csv"), header=TRUE, row.names=1)
-malaria_deaths = read.csv(url("http://docs.google.com/spreadsheet/pub?key=pp59adS3CHWfZGL9qouvTbQ&output=csv"), header=TRUE, row.names=1)
+malaria_cases = read.csv("http://docs.google.com/spreadsheet/pub?key=pp59adS3CHWczfPHQMiqxCg&output=csv", header=TRUE, row.names=1)
+malaria_deaths = read.csv("http://docs.google.com/spreadsheet/pub?key=pp59adS3CHWfZGL9qouvTbQ&output=csv", header=TRUE, row.names=1)
 
 shapiro.test(malaria_deaths$X2003)
 shapiro.test(malaria_deaths$X2005)
@@ -116,6 +116,7 @@ malaria_trendplot = function(full_data, title, save_location, ylab) {
 
     years = names(full_data) = sub("^X", "", names(full_data))
     # Alternatively have an extra argument named "years" with a vector of years
+    lims = range(total_malaria)
 
     png(filename=save_location)
     plot(x=years,
@@ -125,12 +126,16 @@ malaria_trendplot = function(full_data, title, save_location, ylab) {
          lwd=2,
          main=title,
          ylab=ylab,
-         xlab="Years")
+         xlab="Years",
+         axes=FALSE,
+         ylim=c(lims[1] * 0.95, lims[2] * 1.05))
+    axis(1)
+    axis(2, at=seq(lims[1] * 0.95, lims[2] * 1.05, length.out = 4))
     dev.off()
 }
 
-malaria_cases = read.csv(url("http://docs.google.com/spreadsheet/pub?key=pp59adS3CHWczfPHQMiqxCg&output=csv"), header=TRUE, row.names=1)
-malaria_deaths = read.csv(url("http://docs.google.com/spreadsheet/pub?key=pp59adS3CHWfZGL9qouvTbQ&output=csv"), header=TRUE, row.names=1)
+malaria_cases = read.csv("http://docs.google.com/spreadsheet/pub?key=pp59adS3CHWczfPHQMiqxCg&output=csv", header=TRUE, row.names=1)
+malaria_deaths = read.csv("http://docs.google.com/spreadsheet/pub?key=pp59adS3CHWfZGL9qouvTbQ&output=csv", header=TRUE, row.names=1)
 
 malaria_trendplot(full_data=malaria_cases, title="Worldwide malaria cases over time", save_location="~/malaria_cases_trendplot.png", ylab="Number of malaria cases")
 malaria_trendplot(full_data=malaria_deaths, title="Worldwide malaria deaths over time", save_location="~/malaria_deaths_trendplot.png", ylab="Number of malaria deaths")
