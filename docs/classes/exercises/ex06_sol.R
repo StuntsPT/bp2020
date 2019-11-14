@@ -20,6 +20,7 @@ colour_counts = data.frame(table(magic_beans[,"Colour"]))
 
 barplot(height=colour_counts[, "Freq"],
         width=1,
+        las=1,
         names.arg=colour_counts[, "Var1"],
         col=as.vector(colour_counts[, "Var1"]),
         ylab="Magic beans",
@@ -48,7 +49,7 @@ for (i in 1:length(colour_expectations)) {
     }
 
 q_values = p.adjust(p_vals, method="fdr")
-# According to the q-values, assuming alpha==0.05, only the green beans are not significantly different from the expected porportion.
+# According to the q-values, assuming alpha==0.05, only the green and blue beans are not significantly different from the expected porportion.
 
 # 2.3
 if (!require("XNomial")) {
