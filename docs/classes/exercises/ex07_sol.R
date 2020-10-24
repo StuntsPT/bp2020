@@ -64,7 +64,7 @@ plot(cluster,
      xlab="Plants")
 
 # 3.1
-SNP_full_data = read.csv(url("https://gitlab.com/StuntsPT/bp2019/raw/master/docs/classes/exercises/TLE.str"), header=TRUE, row.names=1, sep=" ")
+SNP_full_data = read.csv(url("https://gitlab.com/StuntsPT/bp2020/raw/master/docs/classes/exercises/TLE.str"), header=TRUE, row.names=1, sep=" ")
 just_snp_data = SNP_full_data[,3:length(SNP_full_data)]
 color_categories = SNP_full_data[,2]
 populations = SNP_full_data[,1]

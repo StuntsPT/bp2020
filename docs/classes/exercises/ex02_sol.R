@@ -1,4 +1,4 @@
-## Possible solutions for class 02 exercises (https://stuntspt.gitlab.io/bp2019/classes/exercises/ex02.html)
+## Possible solutions for class 02 exercises (https://stuntspt.gitlab.io/bp2020/classes/exercises/ex02.html)
 
 ## 1. Data Structures
 
@@ -16,7 +16,7 @@ diatoms_data[diatoms_data$River.name == "Snake River", ]
 ## 3. Online data
 
 # 3.1
-pokedata = read.csv("https://gitlab.com/StuntsPT/bp2019/raw/master/docs/classes/exercises/poke_data.csv", header=TRUE, sep="\t", row.names=2)
+pokedata = read.csv("https://gitlab.com/StuntsPT/bp2020/raw/master/docs/classes/exercises/poke_data.csv", header=TRUE, sep="\t", row.names=2)
 
 # 3.2
 View(pokedata)

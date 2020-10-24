@@ -96,7 +96,7 @@ dev.off()
 
 ## Pokedata Pt. 2
 # 1.
-pokedata = read.csv("https://gitlab.com/StuntsPT/bp2019/raw/master/docs/classes/exercises/poke_data.csv", header=TRUE, sep="\t")
+pokedata = read.csv("https://gitlab.com/StuntsPT/bp2020/raw/master/docs/classes/exercises/poke_data.csv", header=TRUE, sep="\t")
 
 max_hp = as.numeric(max(pokedata$HP))
 
