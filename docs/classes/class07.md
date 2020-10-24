@@ -1,6 +1,6 @@
 ### Class #7
 
-#### Bioinformática Prática 2019
+#### Bioinformática Prática 2020
 
 <img src="C01_assets/logo-FCUL.png" style="background:none; border:none; box-shadow:none;">
 

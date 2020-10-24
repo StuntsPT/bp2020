@@ -1,6 +1,6 @@
 #### Class #4
 
-##### Bioinformática Prática 2019
+##### Bioinformática Prática 2020
 
 <img src="C01_assets/logo-FCUL.png" style="background:none; border:none; box-shadow:none;">
 
@@ -195,7 +195,7 @@ legend(1, st_range[2], c("charles","scott"),
 ### Getting data from an external file
 
 ```R
-classes_data = read.csv("https://gitlab.com/StuntsPT/bp2019/raw/master/docs/classes/C04_assets/classes_data.txt", header=TRUE, sep="\t")
+classes_data = read.csv("https://gitlab.com/StuntsPT/bp2020/raw/master/docs/classes/C04_assets/classes_data.txt", header=TRUE, sep="\t")
 # Now we load the data from an external source
 
 max_y = max(classes_data)
@@ -231,14 +231,14 @@ legend(1, max_y, names(classes_data), cex=0.8, col=plot_colors,
 
 ```
 
-[Alternate link](https://raw.githubusercontent.com/StuntsPT/BP2019/master/docs/classes/C04_assets/classes_data.txt)
+[Alternate link](https://raw.githubusercontent.com/StuntsPT/BP2020/master/docs/classes/C04_assets/classes_data.txt)
 
 |||
 
 ### "Saving the plot"
 
 ```R
-classes_data = read.csv("https://gitlab.com/StuntsPT/bp2019/raw/master/docs/classes/C04_assets/classes_data.txt", header=TRUE, sep="\t")
+classes_data = read.csv("https://gitlab.com/StuntsPT/bp2020/raw/master/docs/classes/C04_assets/classes_data.txt", header=TRUE, sep="\t")
 
 max_y = max(classes_data)
 plot_colors <- c("gray","red","orange")
@@ -310,20 +310,20 @@ dev.off()
 ### Bar plot basics
 
 ```R
-classes_data = read.csv("https://gitlab.com/StuntsPT/bp2019/raw/master/docs/classes/C04_assets/classes_data.txt", header=TRUE, sep="\t")
+classes_data = read.csv("https://gitlab.com/StuntsPT/bp2020/raw/master/docs/classes/C04_assets/classes_data.txt", header=TRUE, sep="\t")
 
 barplot(classes_data$Charles)
 # Try with Scott too
 ```
 
-[Alternate Link](https://github.com/StuntsPT/BP2019/raw/master/docs/classes/C04_assets/classes_data.txt)
+[Alternate Link](https://github.com/StuntsPT/BP2020/raw/master/docs/classes/C04_assets/classes_data.txt)
 
 |||
 
 #### "Side by side"
 
 ```R
-classes_data = read.csv("https://gitlab.com/StuntsPT/bp2019/raw/master/docs/classes/C04_assets/classes_data.txt", header=TRUE, sep="\t")
+classes_data = read.csv("https://gitlab.com/StuntsPT/bp2020/raw/master/docs/classes/C04_assets/classes_data.txt", header=TRUE, sep="\t")
 
 barplot(as.matrix(classes_data), main="Institute", ylab= "Total Students",
         beside=TRUE, col=rainbow(5))
@@ -342,7 +342,7 @@ legend("topleft", c("Mon","Tue","Wed","Thu","Fri"), cex=0.6,
 ### Focus on weekdays
 
 ```R
-classes_data = read.csv("https://gitlab.com/StuntsPT/bp2019/raw/master/docs/classes/C04_assets/classes_data.txt", header=TRUE, sep="\t")
+classes_data = read.csv("https://gitlab.com/StuntsPT/bp2020/raw/master/docs/classes/C04_assets/classes_data.txt", header=TRUE, sep="\t")
 
 barplot(t(classes_data), main="Institute", ylab="Total Students", 
         col=heat.colors(3), space=0.1, cex.axis=0.8, las=1,
@@ -361,7 +361,7 @@ legend("topleft", names(classes_data), cex=0.8, fill=heat.colors(3))
 ### How can we improve the legend?
 
 ```R
-classes_data = read.csv("https://gitlab.com/StuntsPT/bp2019/raw/master/docs/classes/C04_assets/classes_data.txt", header=TRUE, sep="\t")
+classes_data = read.csv("https://gitlab.com/StuntsPT/bp2020/raw/master/docs/classes/C04_assets/classes_data.txt", header=TRUE, sep="\t")
 
 par(xpd=T, mar=par()$mar+c(0,0,0,4))
 # Let's add some space, right of our figure
@@ -380,7 +380,7 @@ legend(6, 30, names(classes_data), cex=0.8, fill=heat.colors(3))
 ### Something still bothers me...
 
 ```R
-classes_data = read.csv("https://gitlab.com/StuntsPT/bp2019/raw/master/docs/classes/C04_assets/classes_data.txt", header=TRUE, sep="\t")
+classes_data = read.csv("https://gitlab.com/StuntsPT/bp2020/raw/master/docs/classes/C04_assets/classes_data.txt", header=TRUE, sep="\t")
 
 par(xpd=T, mar=par()$mar+c(0,0,0,4))
 
@@ -428,7 +428,7 @@ legend(6, 30, names(classes_data), cex=0.8, fill=heat.colors(3))
 ### Using `par()`
 
 ```R
-classes_data = read.csv("https://gitlab.com/StuntsPT/bp2019/raw/master/docs/classes/C04_assets/classes_data.txt", header=TRUE, sep="\t")
+classes_data = read.csv("https://gitlab.com/StuntsPT/bp2020/raw/master/docs/classes/C04_assets/classes_data.txt", header=TRUE, sep="\t")
 
 par(mfrow=c(1,2))
 # Divides the drawing area in 2 columns
@@ -483,7 +483,7 @@ barplot(as.matrix(classes_data), main="Institute", ylab= "Total Students",
 ### Basic histogram
 
 ```R
-classes_data = read.csv("https://gitlab.com/StuntsPT/bp2019/raw/master/docs/classes/C04_assets/classes_data.txt", header=TRUE, sep="\t")
+classes_data = read.csv("https://gitlab.com/StuntsPT/bp2020/raw/master/docs/classes/C04_assets/classes_data.txt", header=TRUE, sep="\t")
 
 hist(classes_data$Charles)
 ```
@@ -493,7 +493,7 @@ hist(classes_data$Charles)
 ### Adding more data
 
 ```R
-classes_data = read.csv("https://gitlab.com/StuntsPT/bp2019/raw/master/docs/classes/C04_assets/classes_data.txt", header=TRUE, sep="\t")
+classes_data = read.csv("https://gitlab.com/StuntsPT/bp2020/raw/master/docs/classes/C04_assets/classes_data.txt", header=TRUE, sep="\t")
 
 all_classes = c(classes_data$Charles, classes_data$Scott, 
                 classes_data$Logan)
@@ -509,7 +509,7 @@ hist(all_classes, col="gold")
 ### Controlling the bins
 
 ```R
-classes_data = read.csv("https://gitlab.com/StuntsPT/bp2019/raw/master/docs/classes/C04_assets/classes_data.txt", header=TRUE, sep="\t")
+classes_data = read.csv("https://gitlab.com/StuntsPT/bp2020/raw/master/docs/classes/C04_assets/classes_data.txt", header=TRUE, sep="\t")
 
 all_classes = c(classes_data$Charles, classes_data$Scott, 
                 classes_data$Logan)
@@ -529,7 +529,7 @@ hist(all_classes, col="gold", breaks=max_num,
 ### Even more control!
 
 ```R
-classes_data = read.csv("https://gitlab.com/StuntsPT/bp2019/raw/master/docs/classes/C04_assets/classes_data.txt", header=TRUE, sep="\t")
+classes_data = read.csv("https://gitlab.com/StuntsPT/bp2020/raw/master/docs/classes/C04_assets/classes_data.txt", header=TRUE, sep="\t")
 
 all_classes = c(classes_data$Charles, classes_data$Scott, 
                 classes_data$Logan)
