@@ -153,7 +153,7 @@ Factors are used for storing **categorical variables**.
 <img src="C02_assets/pokeball.png" style="background:none; border:none; box-shadow:none;">
 
 <pre class="fragment"><code>captured_pokemon = c("normal", "normal", "electric", "fire", "fire", "fire", "water", "grass")
-captured_pokemon_types = factor(captured_pokemon)
+captured_pokemon_types = levels(as.factor(captured_pokemon))
 </pre></code>
 
 ---
@@ -226,7 +226,7 @@ mtcars["mpg"]  # Calling it like this will get the names too
 
 mtcars[1,]  # Get row 1
 
-mtcars$am == 0  # Logical indexing!!!111!!one
+mtcars$mpg <= 15  # Logical indexing!!!111!!one
 
 mtcars[mtcars$cyl == 6,]  # Can you guess what this does?
 ```
