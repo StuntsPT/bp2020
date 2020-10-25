@@ -14,11 +14,11 @@
 
 **1ª semana**
 
-* 28-10-2020 – Introdução à disciplina; organização e tratamento de dados
-* 29-10-2020 – Introdução ao R
-* 30-10-2020 – Revisão de conceitos (*Ciências Research Day*)
-* 31-10-2020 – Gráficos em R
-* 01-11-2020 - **Feriado**
+* 26-10-2020 – Introdução à disciplina; organização e tratamento de dados
+* 27-10-2020 – Introdução ao R
+* 28-10-2020 – **Dia de Ciências**
+* 29-10-2020 – Gráficos em R
+* 30-10-2020 – *Revisão de conceitos estatísticos*
 
 |||
 
@@ -26,11 +26,11 @@
 
 **2ª semana**
 
-* 04-11-2020 – Testes de hipóteses
-* 05-11-2020 – Testes de hipóteses II
-* 06-11-2020 – **Journal Club** (14-16h) - Seminário
-* 07-11-2020 – Análise exploratória
-* 08-11-2020 – Automatização e reprodutibilidade
+* 02-11-2020 – Testes de hipóteses
+* 03-11-2020 – Testes de hipóteses II
+* 04-11-2020 – **Journal Club** (14-16h) - Seminário
+* 05-11-2020 – Análise exploratória
+* 06-11-2020 – Automatização e reprodutibilidade
 
 |||
 
@@ -38,11 +38,11 @@
 
 **3ª semana**
 
-* 11-11-2020 – Revisões (14h-16h) - Seminário
-* 12-11-2020 – **Apresentações**
-* 13-11-2020 – **Apresentações**
-* 14-11-2020 – Exercícios
-* 15-11-2020 – **Exame TP**
+* 09-11-2020 – Revisões (14h-16h) - Seminário
+* 10-11-2020 – **Apresentações**
+* 11-11-2020 – **Apresentações**
+* 12-11-2020 – Exercícios
+* 13-11-2020 – **Exame TP**
 
 ---
 
@@ -51,13 +51,13 @@
 * Exame prático - exame individual realizado em computador, semelhante aos exercícios das aulas teórico-práticas - 50% <!-- .element: class="fragment" data-fragment-index="1" -->
 * Seminário apresentado pelos alunos - 25%  <!-- .element: class="fragment" data-fragment-index="2" -->
 * Discussão de artigos científicos - 10%  <!-- .element: class="fragment" data-fragment-index="3" -->
-* Participação geral na cadeira - 15%. <!-- .element: class="fragment" data-fragment-index="4" -->
+* Participação geral nas aulas - 15%. <!-- .element: class="fragment" data-fragment-index="4" -->
 
 |||
 
 ## Exame TP
 
-* Baseado nos exercícios feitos ao longo da disciplina <!-- .element: class="fragment" data-fragment-index="1" -->
+* Baseado nos exercícios feitos ao longo da UC <!-- .element: class="fragment" data-fragment-index="1" -->
 * Com consulta <!-- .element: class="fragment" data-fragment-index="2" -->
 * 100% digital <!-- .element: class="fragment" data-fragment-index="3" -->
 
@@ -68,7 +68,7 @@
 * Apresentação individual de 15 minutos <!-- .element: class="fragment" data-fragment-index="1" -->
   * Discussão de 5 minutos <!-- .element: class="fragment" data-fragment-index="1" -->
 * Enviem um artigo científico à vossa escolha por email <!-- .element: class="fragment" data-fragment-index="2" -->
-  * Focar a apresentação nos conteúdos relacionados com o programa da disciplina <!-- .element: class="fragment" data-fragment-index="2" -->
+  * Focar a apresentação nos conteúdos relacionados com o programa da UC <!-- .element: class="fragment" data-fragment-index="2" -->
 
 |||
 
