@@ -30,7 +30,7 @@
 ### Rules of engagement
 
 <ul>
-<li class="fragment">Lines with a `#` below are wither new, or changed</li>
+<li class="fragment">Lines with a `#` in the line below are either new, or changed</li>
   <ul>
   <li class="fragment">Pay special attention to them</li>
   </ul>
