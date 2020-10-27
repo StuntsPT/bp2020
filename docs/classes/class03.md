@@ -182,7 +182,7 @@
 <li class="fragment">Standard deviation (σ) - [Square root of variance](https://www.mathsisfun.com/data/standard-deviation-formulas.html)</li>
 <li class="fragment">Coefficient of variation - Ratio of Std. Dev. to the mean</li>
 <li class="fragment">Standard error - Std. Dev. of the sampling distribution</li>
-<li class="fragment">Confidence interval</li>
+<li class="fragment">[Confidence interval](https://www.dummies.com/education/science/biology/confidence-interval-basics/)</li>
 </ul>
 
 |||
