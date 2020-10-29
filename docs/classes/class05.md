@@ -114,7 +114,7 @@ legend("topright", inset=.05, title="Distributions",
 ### Single sample test
 
 * Single sample tests are used to compare a sample against a single value:
-	* "Is this sample's value significantly different from a specific value?" <!-- .element: class="fragment" data-fragment-index="1" -->
+	* "Is this sample significantly different from a specific value?" <!-- .element: class="fragment" data-fragment-index="1" -->
 <center>![Single sample test](C05_assets/Single_sample.png)</center> <!-- .element: class="fragment" data-fragment-index="2" -->
 
 ---
