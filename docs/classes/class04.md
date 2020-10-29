@@ -152,7 +152,7 @@ title(ylab="Students", col.lab="darkgreen")
 
 legend(1, st_range[2], c("charles","scott"),
        cex=0.8, 
-              col=c("gray","red"), pch=4:22, lty=1:2)
+              col=c("gray","red"), pch=c(4,22), lty=c(1,2))
 	      # Adds a legend. What are the first 2 arguments?
 	      # What does "cex" do?
 	      # Check the "pch" numbers too
@@ -187,7 +187,7 @@ title(ylab="Students", col.lab="darkgreen")
 
 legend(1, st_range[2], c("charles","scott"),
        cex=0.8, 
-              col=c("gray","red"), pch=4:22, lty=1:2)
+              col=c("gray","red"), pch=c(4,22), lty=c(1,2))
 ```
 
 |||
