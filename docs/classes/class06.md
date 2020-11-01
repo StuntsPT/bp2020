@@ -344,7 +344,7 @@ chisq.test(side_effects_matrix,
 
 ### The Null hypothesis
 
-"The relative porportions of the variables are independent from each other" <!-- .element: class="fragment" data-fragment-index="1" -->
+"The variables' relative porportions are independent" <!-- .element: class="fragment" data-fragment-index="1" -->
 
 ---
 
@@ -535,6 +535,10 @@ plot(Species ~ Latitude,
 Correlation & regression analyses
 
 ```R
+# Check assumptions
+shapiro.test(Data[,"Latitude"])
+shapiro.test(Data[,"Species"])
+
 # Correlation
 cor.test(x=Data$Latitude,
          y=Data$Species,
@@ -556,12 +560,6 @@ Plot the regression line
 ```R
 intercept = model$coefficient["(Intercept)"]
 slope = model$coefficient["Latitude"]
-
-plot(Species ~ Latitude,
-     data = Data,
-     pch=16,
-     xlab = "Latitude",
-     ylab = "Species")
 
 abline(intercept, slope,
        lty=1, lwd=2, col="blue")
