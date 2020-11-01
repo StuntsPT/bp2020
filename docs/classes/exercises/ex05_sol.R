@@ -35,7 +35,7 @@ lines(x=names(male_chol),
       col="blue",
       lwd=2)
 legend("topright",
-       inset=.05, title="Distributions",
+       inset=.05, title="Central tendency measurement",
        c("Mean", "Median"),
        lwd=2, col=c("red", "blue"))
 
@@ -62,7 +62,7 @@ lines(x=names(female_chol),
       col="cyan",
       lwd=2)
 legend("topright",
-       inset=.05, title="Distributions",
+       inset=.05, title="Central tendency measurement",
        c("Mean", "Median"),
        lwd=2, col=c("purple", "cyan"))
 
@@ -94,7 +94,7 @@ shapiro.test(male_chol$`1999`)
 wilcox.test(x=male_chol$`1999`, mu=3.6666, conf.level=0.99)
 
 # H0: Mr. Anderson's cholesterol levels are not different from our 1999 sample.
-# The wilcoxon's test p-value was below the defined treshold of 0.01, meaning
+# Wilcoxon's test p-value was below the defined threshold of 0.01, meaning
 # that there are significant differences between Mr. Anderson's cholesterol
 # levels and those of the 1999 sample. Therefore, H0 is rejected.
 # This suggests that Mr. Anderson is, in fact, "The One".
