@@ -1,4 +1,4 @@
-### Class #9
+### Class #8
 
 #### Bioinformática Prática 2020
 
