@@ -132,13 +132,14 @@ chisq.test(x=obs, p=exp)
 <li class="fragment">Suppose we have flowers where alleles determine colour <font color="red">AA</font>, <font color="pink">Aa</font>, <font color="white">aa</font>.</li>
   <ul>
   <li class="fragment">This trait has Mendelian inheritance</li>
-  <li class="fragment">All F0 males are white</li>
-  <li class="fragment">All F0 females are red</li>
-  <li class="fragment">F1 contains <font color="red">1300</font>, <font color="pink">3000</font>, <font color="white">1500</font></li>
+  <li class="fragment">All F0 males are <font color="white">white</font></li>
+  <li class="fragment">All F0 females are <font color="red">red</font></li>
+  <li class="fragment">All F1 individuals are <font color="pink">pink</font></li>
+  <li class="fragment">F2 contains <font color="red">1300</font>, <font color="pink">3000</font>, <font color="white">1500</font></li>
   </ul>
 </ul>
 
-Are these proportions according to the expectation of 1:2:1 ? <!-- .element: class="fragment" -->
+Are F2 individuals' proportions according to the expectation of 1:2:1 ? <!-- .element: class="fragment" -->
 
 |||
 
