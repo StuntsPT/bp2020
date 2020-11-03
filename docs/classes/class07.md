@@ -355,3 +355,8 @@ wilcox.test(x=wine$Ash[wine$Cultivar == "2"], y=wine$Ash[wine$Cultivar == "1"])
 wilcox.test(x=wine$Ash[wine$Cultivar == "3"], y=wine$Ash[wine$Cultivar == "1"])
 
 ```
+
+### References
+
+* [Computing distance matrices](https://davetang.org/muse/2013/08/15/distance-matrix-computation/)
+* [A short intro to PCA](https://tgmstat.wordpress.com/2013/11/21/introduction-to-principal-component-analysis-pca/)
