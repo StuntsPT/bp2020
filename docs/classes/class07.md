@@ -82,7 +82,7 @@ set.seed(123)
 scater_data = data.frame(x=sample(1:10000,7), 
                          y=sample(1:10000,7))
 
-scp = plot(x=scater_data$x, y=scater_data$y, col=1:7, pch=19)
+plot(x=scater_data$x, y=scater_data$y, col=1:7, pch=19)
 
 legend("topleft",
        legend = c(row.names(scater_data)),
@@ -182,7 +182,73 @@ plot(hclust(dist(student_matrix),method="average"))
 
 ---
 
-### In practice...
+### Improved showtime
+
+* Let's get back to our students' example:
+  * We need to group students based on their grades <!-- .element: class="fragment" data-fragment-index="1" -->
+
+|||
+
+### Showtime!
+
+Get the data and take a look at it.
+
+```R
+student_df = read.csv("https://stuntspt.gitlab.io/bp2020/classes/C07_assets/students.csv",
+                      header=TRUE,
+                      row.names=1,
+                      sep=";")
+View(student_df)
+```
+
+|||
+
+### Showtime!
+
+Using the "Universe" as the discriminant
+
+```R
+# Calculate the PCA
+studentPCA = prcomp(student_df[,1:4])  # Why not the entire DF?
+
+# Define colours for the "Universe" grouping
+my_categories = unique(student_df[,"Universe"])
+universe_colours = as.numeric(factor(student_df[,"Universe"],
+                                     levels=my_categories))
+
+# Draw the plot
+plot(studentPCA$x[,1:2], main="PCA student plot", col=universe_colours)
+
+# Optionally label each point
+text(studentPCA$x[,1], studentPCA$x[,2], rownames(student_df), pos= 3 )
+
+# Draw a nice looking legend
+legend("topright", legend=my_categories, pch = 1,
+       col=unique(universe_colours))
+```
+
+|||
+
+### Showtime!
+
+Using the "Category" as the discriminant
+
+```R
+# Next, do the same, but for another discriminant
+my_categories = unique(student_df[,"Category"])
+category_colours = as.numeric(factor(student_df[,"Category"],
+                                     levels=my_categories))
+
+plot(studentPCA$x[,1:2], main="PCA student plot", col=category_colours)
+text(studentPCA$x[,1], studentPCA$x[,2], rownames(student_df), pos= 3 )
+
+legend("topright", legend=my_categories, pch = 1,
+       col=unique(category_colours))
+```
+
+---
+
+### Let's scale things up...
 
 ```R
 # Get some data
@@ -221,7 +287,7 @@ legend("bottomright", legend = c("Cv1","Cv2","Cv3"), pch = 1,
 <li class="fragment">It is possible to "import" thousands of external 3rd party packages</li>
 <li class="fragment">Bioconductor is more than just a package. It's a 3rd party package repository</li>
   <ul>
-  <li class="fragment">It hosts ~~1473~~ ~~1649~~ 1823 bioinformatics related packages (at the time of writing)</li>
+  <li class="fragment">It hosts ~~1473~~ ~~1649~~ ~~1823~~ 1974 bioinformatics related packages (at the time of writing)</li>
   <li class="fragment">It is very easy to use directly from R</li>
   </ul>
 </ul>
