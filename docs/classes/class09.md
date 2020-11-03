@@ -114,7 +114,7 @@ x
 
 ---
 
-### If only we knew a way to improve the way we test this code...
+### There has to be a better way!
 
 ---
 
@@ -212,7 +212,7 @@ exp = c(1/11, 9/11)
 Vs.
 
 ```R
-obs = table(war_data$attacker_outcome)
+obs = table(war_data[,"attacker_outcome"])
 exp = c(1/11, 9/11)
 ```
 
