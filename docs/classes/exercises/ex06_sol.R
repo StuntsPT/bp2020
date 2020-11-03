@@ -74,8 +74,8 @@ obs=c(89, 322, 16)
 exp=c(5/21, 15/21, 1/21)
 
 binom.test(x=obs[1], n=sum(obs), p=exp[1], alternative="greater")
-# The porportion of tie fighters found aboard the Imperial Star Destroyer are not significantly different from what is expected for a ground strike.
-# The rebel base should deploy defences to react to a ground assault.
+# The proportion of tie fighters found aboard the Imperial Star Destroyer are not significantly different from what is expected for a ground strike.
+# The rebel base should deploy defenses to react to a ground assault.
 
 ## Regression
 
