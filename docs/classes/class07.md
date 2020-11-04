@@ -356,6 +356,8 @@ wilcox.test(x=wine$Ash[wine$Cultivar == "3"], y=wine$Ash[wine$Cultivar == "1"])
 
 ```
 
+---
+
 ### References
 
 * [Computing distance matrices](https://davetang.org/muse/2013/08/15/distance-matrix-computation/)
