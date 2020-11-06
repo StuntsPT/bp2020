@@ -157,7 +157,7 @@ slplot(plant_pca,
 legend("bottomright", legend=unique(discriminant), col=unique(factor(discriminant)), pch=1)
 
 # 3.2
-# The segregation by "base grass" is not perfect, but there is evidence of some split between Rye and TF individuals.
+# The segregation by "base grass" suggests a split between Rye and TF individuals.
 
 # 3.3
 slplot(plant_pca,
