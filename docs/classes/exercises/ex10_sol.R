@@ -145,16 +145,15 @@ source("https://bioconductor.org/biocLite.R")
 biocLite("pcaMethods")
 library(pcaMethods)
 
-community_data = read.csv("https://datastore.landcareresearch.co.nz/dataset/43d27a6e-544a-4134-b19f-12c78e6a5652/resource/aa238833-e9e8-4ac1-8ba7-ae2737e0f7f3/download/april-dvp.csv", header=TRUE, sep=",", na.strings=c(0))
+community_data = read.csv("https://datastore.landcareresearch.co.nz/dataset/43d27a6e-544a-4134-b19f-12c78e6a5652/resource/aa238833-e9e8-4ac1-8ba7-ae2737e0f7f3/download/april-dvp.csv", header=TRUE, sep=",")
 plant_traits_data = community_data[,7:length(community_data)]
 discriminant = community_data[,6]
 
-plant_pca <- pca(plant_traits_data, scale="none", center=TRUE, nPcs=2, method="nipals")
+plant_pca <- pca(plant_traits_data, scale="vector", center=TRUE, nPcs=2, method="nipals")
 
 slplot(plant_pca,
        scol=factor(discriminant),
-       scoresLoadings=c(TRUE,FALSE),
-       main="PCA from Alberta grassland plant data")
+       scoresLoadings=c(TRUE,FALSE))
 legend("bottomright", legend=unique(discriminant), col=unique(factor(discriminant)), pch=1)
 
 # 3.2
